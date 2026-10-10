@@ -62,24 +62,106 @@ RUNTIME_QUEUE_CACHE = None
 
 @lru_cache(maxsize=1)
 def load_queue_artifact() -> List[dict]:
-    """Memoized lazy-loading of the queue artifact."""
+    """Memoized lazy-loading of the queue artifact with multi-path lookup & Vercel fallback."""
     global RUNTIME_QUEUE_CACHE
-    if RUNTIME_QUEUE_CACHE is not None:
+    if RUNTIME_QUEUE_CACHE is not None and len(RUNTIME_QUEUE_CACHE) > 0:
         return RUNTIME_QUEUE_CACHE
 
-    try:
-        if os.path.exists(QUEUE_PATH):
-            with open(QUEUE_PATH, 'r') as f:
-                logger.info("Successfully loaded queue artifact into memory.")
-                RUNTIME_QUEUE_CACHE = json.load(f)
-                return RUNTIME_QUEUE_CACHE
-        logger.warning(f"Artifact not found at {QUEUE_PATH}")
-        RUNTIME_QUEUE_CACHE = []
-        return RUNTIME_QUEUE_CACHE
-    except Exception as e:
-        logger.error(f"Error loading artifact: {e}")
-        RUNTIME_QUEUE_CACHE = []
-        return RUNTIME_QUEUE_CACHE
+    candidate_paths = [
+        QUEUE_PATH,
+        os.path.join(os.getcwd(), 'model', 'top_500_queue.json'),
+        os.path.join(BASE_DIR, 'model', 'top_500_queue.json'),
+        os.path.join(os.path.dirname(__file__), 'top_500_queue.json'),
+        os.path.join(os.path.dirname(__file__), '..', 'model', 'top_500_queue.json')
+    ]
+
+    for p in candidate_paths:
+        if p and os.path.exists(p):
+            try:
+                with open(p, 'r') as f:
+                    data = json.load(f)
+                    if data:
+                        logger.info(f"Successfully loaded queue artifact into memory from {p}")
+                        RUNTIME_QUEUE_CACHE = data
+                        return RUNTIME_QUEUE_CACHE
+            except Exception as e:
+                logger.error(f"Error loading artifact from {p}: {e}")
+
+    logger.warning("Queue artifact file not found on serverless path. Generating fallback synthetic queue.")
+    fallback_queue = [
+        {
+            "customer_id": 1001,
+            "customer_name": "Eleanor Vance",
+            "default_probability": 0.942,
+            "risk_tier": "High Risk: Priority Outbound Call",
+            "top_risk_features": ["Recent Payment Delay", "High Line Utilization", "Low Monthly Repayment"],
+            "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+            "limit_bal": 50000.0,
+            "age": 38,
+            "education": 2,
+            "pay_0": 2,
+            "bill_amt1": 46500.0,
+            "pay_amt1": 1000.0
+        },
+        {
+            "customer_id": 1002,
+            "customer_name": "Marcus Chen",
+            "default_probability": 0.885,
+            "risk_tier": "High Risk: Priority Outbound Call",
+            "top_risk_features": ["Recent Payment Delay", "Low Monthly Repayment"],
+            "explanation": "Customer shows an initial payment delay accompanied by an increased revolving balance relative to their credit line.",
+            "limit_bal": 120000.0,
+            "age": 42,
+            "education": 1,
+            "pay_0": 2,
+            "bill_amt1": 98000.0,
+            "pay_amt1": 2500.0
+        },
+        {
+            "customer_id": 1003,
+            "customer_name": "Sarah Jenkins",
+            "default_probability": 0.421,
+            "risk_tier": "Medium Risk: Proactive Limit Review",
+            "top_risk_features": ["High Line Utilization"],
+            "explanation": "Statement balance exceeds 80% of total credit line with minimal monthly repayment, signaling debt accumulation risk.",
+            "limit_bal": 80000.0,
+            "age": 31,
+            "education": 2,
+            "pay_0": 1,
+            "bill_amt1": 68000.0,
+            "pay_amt1": 3500.0
+        },
+        {
+            "customer_id": 1004,
+            "customer_name": "David Kim",
+            "default_probability": 0.365,
+            "risk_tier": "Medium Risk: Proactive Limit Review",
+            "top_risk_features": ["Low Monthly Repayment"],
+            "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+            "limit_bal": 150000.0,
+            "age": 47,
+            "education": 1,
+            "pay_0": 1,
+            "bill_amt1": 45000.0,
+            "pay_amt1": 2000.0
+        },
+        {
+            "customer_id": 1005,
+            "customer_name": "Aisha Patel",
+            "default_probability": 0.124,
+            "risk_tier": "Early Warning: Digital SMS Nudge",
+            "top_risk_features": ["Payment Delay History"],
+            "explanation": "Early volatility indicators detected in revolving payment ratios and monthly statement activity relative to credit line.",
+            "limit_bal": 200000.0,
+            "age": 29,
+            "education": 1,
+            "pay_0": 0,
+            "bill_amt1": 15000.0,
+            "pay_amt1": 15000.0
+        }
+    ]
+    RUNTIME_QUEUE_CACHE = fallback_queue
+    return RUNTIME_QUEUE_CACHE
 
 # Names for synthetic name generation if missing
 FIRST_NAMES = ["Eleanor", "Marcus", "Sarah", "David", "Amara", "Carlos", "Aisha", "Liam", "Sophia", "Vikram", "Elena", "Chen", "Maya", "Jackson", "Fatima", "Oliver", "Priya", "Lucas", "Zoe", "Dmitri"]
@@ -139,8 +221,16 @@ def predict_single_risk(data_dict: dict) -> float:
     model_prob = None
     try:
         import joblib
-        if os.path.exists(MODEL_PATH):
-            model = joblib.load(MODEL_PATH)
+        candidate_model_paths = [
+            MODEL_PATH,
+            os.path.join(os.getcwd(), 'model', 'credit_model.pkl'),
+            os.path.join(BASE_DIR, 'model', 'credit_model.pkl'),
+            os.path.join(os.path.dirname(__file__), 'credit_model.pkl'),
+            os.path.join(os.path.dirname(__file__), '..', 'model', 'credit_model.pkl')
+        ]
+        model_file = next((p for p in candidate_model_paths if p and os.path.exists(p)), None)
+        if model_file:
+            model = joblib.load(model_file)
             df_in = pd.DataFrame([{
                 'LIMIT_BAL': limit_bal,
                 'SEX': int(data_dict.get('sex', 1)),
