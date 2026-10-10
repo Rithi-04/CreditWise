@@ -1,0 +1,3368 @@
+[
+  {
+    "customer_id": 882,
+    "customer_name": "Zoe Soderberg",
+    "default_probability": 0.7255,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 339227.44436337694,
+    "age": 73,
+    "education": 2,
+    "pay_0": 7,
+    "bill_amt1": 52780.736355883,
+    "pay_amt1": 220.39203667634234
+  },
+  {
+    "customer_id": 947,
+    "customer_name": "Chen Al-Mansoor",
+    "default_probability": 0.6544,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 77073.95873371557,
+    "age": 53,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 41908.7753670966,
+    "pay_amt1": 6332.83513639688
+  },
+  {
+    "customer_id": 713,
+    "customer_name": "Lucas Jenkins",
+    "default_probability": 0.598,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 241072.3323895776,
+    "age": 23,
+    "education": 3,
+    "pay_0": 8,
+    "bill_amt1": 1972.5746463175487,
+    "pay_amt1": 182.05303103198565
+  },
+  {
+    "customer_id": 415,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.5963,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 319600.23396320164,
+    "age": 32,
+    "education": 3,
+    "pay_0": -2,
+    "bill_amt1": 27523.610593112247,
+    "pay_amt1": 6833.607948733627
+  },
+  {
+    "customer_id": 849,
+    "customer_name": "Vikram Santos",
+    "default_probability": 0.5727,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 256075.55506230888,
+    "age": 25,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 67252.24042381394,
+    "pay_amt1": 1232.8639932605001
+  },
+  {
+    "customer_id": 194,
+    "customer_name": "Sarah Dubois",
+    "default_probability": 0.5518,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 320219.7140639013,
+    "age": 63,
+    "education": 3,
+    "pay_0": 8,
+    "bill_amt1": 17461.091698226195,
+    "pay_amt1": 9978.363962915615
+  },
+  {
+    "customer_id": 848,
+    "customer_name": "Sophia Wong",
+    "default_probability": 0.5418,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 498468.3834045142,
+    "age": 36,
+    "education": 1,
+    "pay_0": 7,
+    "bill_amt1": 21092.733610651194,
+    "pay_amt1": 8638.09875301513
+  },
+  {
+    "customer_id": 983,
+    "customer_name": "Mateo Novak",
+    "default_probability": 0.5351,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 62233.14403554818,
+    "age": 53,
+    "education": 3,
+    "pay_0": 8,
+    "bill_amt1": 74289.88140984319,
+    "pay_amt1": 9998.926667050493
+  },
+  {
+    "customer_id": 968,
+    "customer_name": "Sophia Wong",
+    "default_probability": 0.5345,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 155589.64065535576,
+    "age": 38,
+    "education": 1,
+    "pay_0": 3,
+    "bill_amt1": 58769.01275598189,
+    "pay_amt1": 2738.206192862208
+  },
+  {
+    "customer_id": 386,
+    "customer_name": "Sarah Dubois",
+    "default_probability": 0.5231,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 403705.6558885758,
+    "age": 34,
+    "education": 1,
+    "pay_0": 2,
+    "bill_amt1": 57483.90378598749,
+    "pay_amt1": 8329.017228245964
+  },
+  {
+    "customer_id": 105,
+    "customer_name": "Vikram Santos",
+    "default_probability": 0.5061,
+    "risk_tier": "High Risk: Priority Outbound Call",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 454707.57222378557,
+    "age": 31,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 72010.16545391412,
+    "pay_amt1": 4232.884884198364
+  },
+  {
+    "customer_id": 70,
+    "customer_name": "Leila Taylor",
+    "default_probability": 0.479,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 493574.5989342535,
+    "age": 51,
+    "education": 1,
+    "pay_0": 6,
+    "bill_amt1": 23842.717895348364,
+    "pay_amt1": 1312.8687108263925
+  },
+  {
+    "customer_id": 533,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.4714,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 498352.05016621365,
+    "age": 45,
+    "education": 3,
+    "pay_0": 4,
+    "bill_amt1": 5648.342400348205,
+    "pay_amt1": 9809.17728178832
+  },
+  {
+    "customer_id": 898,
+    "customer_name": "Elena Chen",
+    "default_probability": 0.4682,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 449204.5510753487,
+    "age": 25,
+    "education": 3,
+    "pay_0": 5,
+    "bill_amt1": 46881.89580152413,
+    "pay_amt1": 3352.166848260083
+  },
+  {
+    "customer_id": 932,
+    "customer_name": "Hannah Zhao",
+    "default_probability": 0.4387,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 419115.8160316566,
+    "age": 66,
+    "education": 4,
+    "pay_0": 2,
+    "bill_amt1": 158.46444663401016,
+    "pay_amt1": 6800.613957479561
+  },
+  {
+    "customer_id": 777,
+    "customer_name": "Vikram Santos",
+    "default_probability": 0.438,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 122333.18366399432,
+    "age": 54,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 24720.511893063325,
+    "pay_amt1": 9552.861960018223
+  },
+  {
+    "customer_id": 759,
+    "customer_name": "Oliver Lin",
+    "default_probability": 0.4305,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 448007.36569496925,
+    "age": 67,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 25325.281696571623,
+    "pay_amt1": 5827.2384061724915
+  },
+  {
+    "customer_id": 16,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.4191,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 99868.20982818257,
+    "age": 38,
+    "education": 2,
+    "pay_0": 8,
+    "bill_amt1": 17025.915212543598,
+    "pay_amt1": 6885.832059788232
+  },
+  {
+    "customer_id": 30,
+    "customer_name": "Aisha Olsen",
+    "default_probability": 0.4101,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 32760.702232798885,
+    "age": 71,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 25361.562763856415,
+    "pay_amt1": 9301.405533875955
+  },
+  {
+    "customer_id": 679,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.4019,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 485040.5123049307,
+    "age": 70,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 49954.87012863752,
+    "pay_amt1": 8404.92508415747
+  },
+  {
+    "customer_id": 8,
+    "customer_name": "Sophia Wong",
+    "default_probability": 0.3971,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 434426.3114297182,
+    "age": 36,
+    "education": 3,
+    "pay_0": 3,
+    "bill_amt1": 24962.470441058336,
+    "pay_amt1": 1112.9566275706648
+  },
+  {
+    "customer_id": 990,
+    "customer_name": "Aisha Olsen",
+    "default_probability": 0.3898,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 411360.1356603579,
+    "age": 64,
+    "education": 2,
+    "pay_0": 3,
+    "bill_amt1": 30884.727478162,
+    "pay_amt1": 6259.3511421945095
+  },
+  {
+    "customer_id": 265,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.3884,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 439912.8052446982,
+    "age": 53,
+    "education": 3,
+    "pay_0": 6,
+    "bill_amt1": 13346.887928212847,
+    "pay_amt1": 5495.227475227586
+  },
+  {
+    "customer_id": 945,
+    "customer_name": "Vikram Santos",
+    "default_probability": 0.387,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 111146.42316269557,
+    "age": 49,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 63039.77312748269,
+    "pay_amt1": 2874.5711350408296
+  },
+  {
+    "customer_id": 662,
+    "customer_name": "Fatima Rodriguez",
+    "default_probability": 0.3864,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 493392.47190856,
+    "age": 47,
+    "education": 2,
+    "pay_0": 1,
+    "bill_amt1": 40414.843177705625,
+    "pay_amt1": 1526.832324849522
+  },
+  {
+    "customer_id": 41,
+    "customer_name": "Lucas Jenkins",
+    "default_probability": 0.3748,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 69798.73507394161,
+    "age": 34,
+    "education": 4,
+    "pay_0": 8,
+    "bill_amt1": 74836.08334286197,
+    "pay_amt1": 9662.537072400897
+  },
+  {
+    "customer_id": 923,
+    "customer_name": "Chen Al-Mansoor",
+    "default_probability": 0.3741,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 448330.5911781048,
+    "age": 29,
+    "education": 4,
+    "pay_0": 8,
+    "bill_amt1": 36699.326708194734,
+    "pay_amt1": 6458.1088005120755
+  },
+  {
+    "customer_id": 846,
+    "customer_name": "Aisha Olsen",
+    "default_probability": 0.3662,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 213165.82062624162,
+    "age": 46,
+    "education": 4,
+    "pay_0": -1,
+    "bill_amt1": 54353.96465750758,
+    "pay_amt1": 3701.6335563637726
+  },
+  {
+    "customer_id": 74,
+    "customer_name": "Sarah Dubois",
+    "default_probability": 0.3595,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 409576.09994286875,
+    "age": 42,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 57268.28158566895,
+    "pay_amt1": 1115.333403516765
+  },
+  {
+    "customer_id": 198,
+    "customer_name": "Aisha Olsen",
+    "default_probability": 0.3394,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 449584.02737676277,
+    "age": 73,
+    "education": 1,
+    "pay_0": 0,
+    "bill_amt1": 51260.505302158796,
+    "pay_amt1": 6155.028533824991
+  },
+  {
+    "customer_id": 605,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.333,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 69111.5768392944,
+    "age": 58,
+    "education": 3,
+    "pay_0": 8,
+    "bill_amt1": 77768.03762748928,
+    "pay_amt1": 1467.8072163579236
+  },
+  {
+    "customer_id": 501,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.3322,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 352099.23986967513,
+    "age": 46,
+    "education": 1,
+    "pay_0": -1,
+    "bill_amt1": 1837.165453810441,
+    "pay_amt1": 401.9869125787656
+  },
+  {
+    "customer_id": 199,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.3242,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 444672.3478899075,
+    "age": 73,
+    "education": 2,
+    "pay_0": 3,
+    "bill_amt1": 93426.97914638769,
+    "pay_amt1": 1285.4595760451048
+  },
+  {
+    "customer_id": 4,
+    "customer_name": "Amara Wright",
+    "default_probability": 0.3085,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 303342.65725654794,
+    "age": 58,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 5421.174420599306,
+    "pay_amt1": 343.3217114285325
+  },
+  {
+    "customer_id": 115,
+    "customer_name": "Dmitri Nakamura",
+    "default_probability": 0.3014,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 320367.8406901075,
+    "age": 46,
+    "education": 3,
+    "pay_0": 2,
+    "bill_amt1": 4783.881250703881,
+    "pay_amt1": 9725.83032551332
+  },
+  {
+    "customer_id": 385,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.2967,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 370184.81146390404,
+    "age": 53,
+    "education": 2,
+    "pay_0": 3,
+    "bill_amt1": 1451.5094527608796,
+    "pay_amt1": 9137.35675109942
+  },
+  {
+    "customer_id": 967,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.2905,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Early volatility indicators detected in revolving payment ratios and monthly statement activity relative to credit line.",
+    "limit_bal": 362332.49354028027,
+    "age": 20,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 26006.274804219065,
+    "pay_amt1": 4587.898652903578
+  },
+  {
+    "customer_id": 721,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.2836,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 469786.82384230854,
+    "age": 57,
+    "education": 1,
+    "pay_0": 2,
+    "bill_amt1": 68899.99849885683,
+    "pay_amt1": 2336.1959847804437
+  },
+  {
+    "customer_id": 727,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.2823,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 78488.46454688185,
+    "age": 36,
+    "education": 1,
+    "pay_0": -1,
+    "bill_amt1": 40624.90959769049,
+    "pay_amt1": 2369.33349171745
+  },
+  {
+    "customer_id": 77,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.282,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 387922.4698761134,
+    "age": 27,
+    "education": 1,
+    "pay_0": -1,
+    "bill_amt1": 53069.518976352134,
+    "pay_amt1": 8968.290448407071
+  },
+  {
+    "customer_id": 256,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.2804,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 282832.6186045916,
+    "age": 31,
+    "education": 4,
+    "pay_0": 6,
+    "bill_amt1": 38516.26277725405,
+    "pay_amt1": 2502.044870635418
+  },
+  {
+    "customer_id": 383,
+    "customer_name": "Mateo Novak",
+    "default_probability": 0.2738,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 318181.9949221432,
+    "age": 57,
+    "education": 1,
+    "pay_0": 2,
+    "bill_amt1": 40938.91311834184,
+    "pay_amt1": 8142.945193475526
+  },
+  {
+    "customer_id": 709,
+    "customer_name": "Jackson Takahashi",
+    "default_probability": 0.2731,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 134773.9208342443,
+    "age": 29,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 52354.15938570817,
+    "pay_amt1": 7927.004505613187
+  },
+  {
+    "customer_id": 269,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.269,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 186150.66409768004,
+    "age": 51,
+    "education": 4,
+    "pay_0": -1,
+    "bill_amt1": 44475.589820201254,
+    "pay_amt1": 3641.5819818388263
+  },
+  {
+    "customer_id": 309,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.2648,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 399641.2354366648,
+    "age": 53,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 39959.85116208679,
+    "pay_amt1": 8193.346240306186
+  },
+  {
+    "customer_id": 167,
+    "customer_name": "Mateo Novak",
+    "default_probability": 0.2638,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 167182.23183615055,
+    "age": 50,
+    "education": 4,
+    "pay_0": 6,
+    "bill_amt1": 21289.425465999346,
+    "pay_amt1": 3813.36976915168
+  },
+  {
+    "customer_id": 861,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.2615,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 390008.53218055516,
+    "age": 67,
+    "education": 3,
+    "pay_0": 0,
+    "bill_amt1": 33533.82383482103,
+    "pay_amt1": 375.7288584461016
+  },
+  {
+    "customer_id": 19,
+    "customer_name": "Dmitri Nakamura",
+    "default_probability": 0.2574,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 221653.05913463671,
+    "age": 41,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 60358.57876582056,
+    "pay_amt1": 4043.300593475422
+  },
+  {
+    "customer_id": 888,
+    "customer_name": "Eleanor Kim",
+    "default_probability": 0.2535,
+    "risk_tier": "Medium Risk: Proactive Limit Review",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 126709.56271289599,
+    "age": 37,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 70391.34261281078,
+    "pay_amt1": 1731.1502592884488
+  },
+  {
+    "customer_id": 787,
+    "customer_name": "Dmitri Nakamura",
+    "default_probability": 0.2479,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 295861.979435399,
+    "age": 78,
+    "education": 1,
+    "pay_0": -2,
+    "bill_amt1": 3473.9947444781483,
+    "pay_amt1": 7188.142666942387
+  },
+  {
+    "customer_id": 634,
+    "customer_name": "Elena Chen",
+    "default_probability": 0.2455,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 270735.6077800047,
+    "age": 72,
+    "education": 2,
+    "pay_0": 6,
+    "bill_amt1": 12544.178445052,
+    "pay_amt1": 4860.450744832292
+  },
+  {
+    "customer_id": 857,
+    "customer_name": "Lucas Jenkins",
+    "default_probability": 0.2435,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Statement balance exceeds 80% of total credit line with minimal monthly repayment, signaling debt accumulation risk.",
+    "limit_bal": 27909.33724556649,
+    "age": 75,
+    "education": 1,
+    "pay_0": 0,
+    "bill_amt1": 56629.614372408745,
+    "pay_amt1": 8883.108221491324
+  },
+  {
+    "customer_id": 210,
+    "customer_name": "Zoe Soderberg",
+    "default_probability": 0.2422,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 88795.94519457433,
+    "age": 73,
+    "education": 1,
+    "pay_0": 7,
+    "bill_amt1": 16939.649963157855,
+    "pay_amt1": 6.394608605349017
+  },
+  {
+    "customer_id": 416,
+    "customer_name": "Sophia Wong",
+    "default_probability": 0.2405,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 229738.3057693767,
+    "age": 69,
+    "education": 4,
+    "pay_0": 0,
+    "bill_amt1": 7520.2028762802465,
+    "pay_amt1": 7242.407868134125
+  },
+  {
+    "customer_id": 122,
+    "customer_name": "Sarah Dubois",
+    "default_probability": 0.2397,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 449084.73696251167,
+    "age": 40,
+    "education": 3,
+    "pay_0": 1,
+    "bill_amt1": 73485.05204996011,
+    "pay_amt1": 574.2347940224502
+  },
+  {
+    "customer_id": 889,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.2373,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 58726.282452079126,
+    "age": 29,
+    "education": 1,
+    "pay_0": 2,
+    "bill_amt1": 65080.269014337966,
+    "pay_amt1": 2579.708396587985
+  },
+  {
+    "customer_id": 973,
+    "customer_name": "Jackson Takahashi",
+    "default_probability": 0.2321,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 368960.3276330226,
+    "age": 34,
+    "education": 1,
+    "pay_0": -2,
+    "bill_amt1": 27846.5290915346,
+    "pay_amt1": 1438.4267394785866
+  },
+  {
+    "customer_id": 126,
+    "customer_name": "Aisha Olsen",
+    "default_probability": 0.2307,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 219282.81642686558,
+    "age": 56,
+    "education": 1,
+    "pay_0": 2,
+    "bill_amt1": 31254.36522367222,
+    "pay_amt1": 9089.097044737142
+  },
+  {
+    "customer_id": 718,
+    "customer_name": "Leila Taylor",
+    "default_probability": 0.2284,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 482863.1862265912,
+    "age": 78,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 35073.729840430875,
+    "pay_amt1": 897.1137605303403
+  },
+  {
+    "customer_id": 726,
+    "customer_name": "Aisha Olsen",
+    "default_probability": 0.2257,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 422496.1006115533,
+    "age": 55,
+    "education": 3,
+    "pay_0": 3,
+    "bill_amt1": 11092.023087480651,
+    "pay_amt1": 9774.742783005704
+  },
+  {
+    "customer_id": 597,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.2239,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 337103.2918753033,
+    "age": 71,
+    "education": 4,
+    "pay_0": -1,
+    "bill_amt1": 33120.83023285216,
+    "pay_amt1": 2.406697429022664
+  },
+  {
+    "customer_id": 136,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.2214,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 168369.43669017006,
+    "age": 28,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 84060.36227731919,
+    "pay_amt1": 9901.652122554053
+  },
+  {
+    "customer_id": 642,
+    "customer_name": "Zoe Soderberg",
+    "default_probability": 0.2213,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 167818.79113575735,
+    "age": 60,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 59495.34887808106,
+    "pay_amt1": 1754.1129165541104
+  },
+  {
+    "customer_id": 405,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.2197,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 166824.30450499975,
+    "age": 48,
+    "education": 3,
+    "pay_0": 3,
+    "bill_amt1": 9382.187239544315,
+    "pay_amt1": 5072.7284442324035
+  },
+  {
+    "customer_id": 839,
+    "customer_name": "Mateo Novak",
+    "default_probability": 0.218,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 294488.2916362413,
+    "age": 79,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 38141.53437833565,
+    "pay_amt1": 6903.775716314234
+  },
+  {
+    "customer_id": 216,
+    "customer_name": "Eleanor Kim",
+    "default_probability": 0.218,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 126252.05287343204,
+    "age": 29,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 88247.01949431354,
+    "pay_amt1": 9947.470513624634
+  },
+  {
+    "customer_id": 711,
+    "customer_name": "Oliver Lin",
+    "default_probability": 0.2129,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 382511.6513459464,
+    "age": 76,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 33481.83447134511,
+    "pay_amt1": 9298.010863077227
+  },
+  {
+    "customer_id": 572,
+    "customer_name": "Hannah Zhao",
+    "default_probability": 0.2111,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 393989.9762431601,
+    "age": 75,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 71098.7941463683,
+    "pay_amt1": 6724.062935955757
+  },
+  {
+    "customer_id": 300,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.2072,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Statement balance exceeds 80% of total credit line with minimal monthly repayment, signaling debt accumulation risk.",
+    "limit_bal": 51820.25784694632,
+    "age": 41,
+    "education": 1,
+    "pay_0": -1,
+    "bill_amt1": 63055.92343457384,
+    "pay_amt1": 1073.5397464609964
+  },
+  {
+    "customer_id": 112,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.2051,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 88998.43075446217,
+    "age": 48,
+    "education": 3,
+    "pay_0": 3,
+    "bill_amt1": 60835.00465316787,
+    "pay_amt1": 285.9483835944232
+  },
+  {
+    "customer_id": 454,
+    "customer_name": "Leila Taylor",
+    "default_probability": 0.2045,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 454113.64869642066,
+    "age": 72,
+    "education": 1,
+    "pay_0": -1,
+    "bill_amt1": 72818.33571884823,
+    "pay_amt1": 6503.233231174055
+  },
+  {
+    "customer_id": 895,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.1965,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 337361.7169196166,
+    "age": 29,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 68924.40199620232,
+    "pay_amt1": 124.09715060159532
+  },
+  {
+    "customer_id": 617,
+    "customer_name": "Lucas Jenkins",
+    "default_probability": 0.1935,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 39928.200328883235,
+    "age": 22,
+    "education": 4,
+    "pay_0": 6,
+    "bill_amt1": 13449.01064955023,
+    "pay_amt1": 1263.4490202820004
+  },
+  {
+    "customer_id": 486,
+    "customer_name": "Aisha Olsen",
+    "default_probability": 0.1934,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 451567.4251405846,
+    "age": 47,
+    "education": 1,
+    "pay_0": 3,
+    "bill_amt1": 98190.53222869428,
+    "pay_amt1": 9747.369441016157
+  },
+  {
+    "customer_id": 927,
+    "customer_name": "Oliver Lin",
+    "default_probability": 0.1908,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 141651.90609862359,
+    "age": 62,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 35636.66377550566,
+    "pay_amt1": 2074.773276564709
+  },
+  {
+    "customer_id": 20,
+    "customer_name": "Hannah Zhao",
+    "default_probability": 0.1901,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 152702.27869704054,
+    "age": 50,
+    "education": 1,
+    "pay_0": 0,
+    "bill_amt1": 50361.99379736014,
+    "pay_amt1": 7847.351140860993
+  },
+  {
+    "customer_id": 219,
+    "customer_name": "David Vance",
+    "default_probability": 0.1878,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 328320.1205331352,
+    "age": 56,
+    "education": 3,
+    "pay_0": 2,
+    "bill_amt1": 46192.5204205735,
+    "pay_amt1": 4959.358345483794
+  },
+  {
+    "customer_id": 523,
+    "customer_name": "Dmitri Nakamura",
+    "default_probability": 0.1877,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 485258.05492915557,
+    "age": 22,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 73543.65938921864,
+    "pay_amt1": 9104.716261712842
+  },
+  {
+    "customer_id": 88,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.1842,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 322403.1609640544,
+    "age": 62,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 39258.775036111125,
+    "pay_amt1": 8140.548723120092
+  },
+  {
+    "customer_id": 28,
+    "customer_name": "Amara Wright",
+    "default_probability": 0.1799,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 261974.8748226697,
+    "age": 27,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 22523.990233524626,
+    "pay_amt1": 5542.952115087567
+  },
+  {
+    "customer_id": 239,
+    "customer_name": "Mateo Novak",
+    "default_probability": 0.1792,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 326281.4249945122,
+    "age": 62,
+    "education": 4,
+    "pay_0": 8,
+    "bill_amt1": 14457.971023958471,
+    "pay_amt1": 3170.139011509019
+  },
+  {
+    "customer_id": 171,
+    "customer_name": "David Vance",
+    "default_probability": 0.1788,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 342006.5373027184,
+    "age": 28,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 48352.20673649715,
+    "pay_amt1": 4992.656746487503
+  },
+  {
+    "customer_id": 44,
+    "customer_name": "Hannah Zhao",
+    "default_probability": 0.1777,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 455566.9970186032,
+    "age": 23,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 72115.92682138772,
+    "pay_amt1": 9461.975264800318
+  },
+  {
+    "customer_id": 362,
+    "customer_name": "Sarah Dubois",
+    "default_probability": 0.1733,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 325211.227036753,
+    "age": 43,
+    "education": 4,
+    "pay_0": 2,
+    "bill_amt1": 47108.37294839253,
+    "pay_amt1": 2210.351432672849
+  },
+  {
+    "customer_id": 488,
+    "customer_name": "Sophia Wong",
+    "default_probability": 0.1733,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 147671.96290019286,
+    "age": 62,
+    "education": 1,
+    "pay_0": 3,
+    "bill_amt1": 12851.566844411644,
+    "pay_amt1": 4460.373276675289
+  },
+  {
+    "customer_id": 506,
+    "customer_name": "Sarah Dubois",
+    "default_probability": 0.172,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 89682.30027899674,
+    "age": 32,
+    "education": 2,
+    "pay_0": 5,
+    "bill_amt1": 44721.374079378504,
+    "pay_amt1": 8370.744458190946
+  },
+  {
+    "customer_id": 544,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.172,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 339133.3353588698,
+    "age": 23,
+    "education": 2,
+    "pay_0": 0,
+    "bill_amt1": 24985.379607832958,
+    "pay_amt1": 5749.706273967217
+  },
+  {
+    "customer_id": 586,
+    "customer_name": "Elena Chen",
+    "default_probability": 0.1699,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 127671.3532013146,
+    "age": 45,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 39672.760046838586,
+    "pay_amt1": 4495.2117259570305
+  },
+  {
+    "customer_id": 784,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.1674,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 179391.03681692053,
+    "age": 74,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 49768.79595477721,
+    "pay_amt1": 1112.612473094684
+  },
+  {
+    "customer_id": 299,
+    "customer_name": "Chen Al-Mansoor",
+    "default_probability": 0.166,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 315216.3331513101,
+    "age": 64,
+    "education": 4,
+    "pay_0": 8,
+    "bill_amt1": 74951.64151567807,
+    "pay_amt1": 3381.079912597027
+  },
+  {
+    "customer_id": 724,
+    "customer_name": "Amara Wright",
+    "default_probability": 0.1659,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 373149.11815212894,
+    "age": 44,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 284.2153663972447,
+    "pay_amt1": 1469.2302710060635
+  },
+  {
+    "customer_id": 173,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.1651,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 260925.59856664768,
+    "age": 30,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 77900.53939240376,
+    "pay_amt1": 9682.351235261705
+  },
+  {
+    "customer_id": 471,
+    "customer_name": "Oliver Lin",
+    "default_probability": 0.1637,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Statement balance exceeds 80% of total credit line with minimal monthly repayment, signaling debt accumulation risk.",
+    "limit_bal": 15955.692598010008,
+    "age": 36,
+    "education": 4,
+    "pay_0": -1,
+    "bill_amt1": 78976.17737346345,
+    "pay_amt1": 3444.413060873649
+  },
+  {
+    "customer_id": 901,
+    "customer_name": "Jackson Takahashi",
+    "default_probability": 0.1603,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 111864.2650215534,
+    "age": 47,
+    "education": 2,
+    "pay_0": 2,
+    "bill_amt1": 50023.147892580186,
+    "pay_amt1": 4545.835055752094
+  },
+  {
+    "customer_id": 50,
+    "customer_name": "Sarah Dubois",
+    "default_probability": 0.1581,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 100578.68320750825,
+    "age": 31,
+    "education": 2,
+    "pay_0": -1,
+    "bill_amt1": 27404.158970427583,
+    "pay_amt1": 8742.970770749625
+  },
+  {
+    "customer_id": 121,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.1568,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Early volatility indicators detected in revolving payment ratios and monthly statement activity relative to credit line.",
+    "limit_bal": 405645.67603039066,
+    "age": 42,
+    "education": 2,
+    "pay_0": 0,
+    "bill_amt1": 23131.41822622935,
+    "pay_amt1": 3593.3519938725967
+  },
+  {
+    "customer_id": 576,
+    "customer_name": "Eleanor Kim",
+    "default_probability": 0.1551,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 475265.10559224465,
+    "age": 31,
+    "education": 4,
+    "pay_0": 0,
+    "bill_amt1": 91163.86897353035,
+    "pay_amt1": 5486.768751493969
+  },
+  {
+    "customer_id": 596,
+    "customer_name": "Hannah Zhao",
+    "default_probability": 0.1545,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 242241.20372880745,
+    "age": 69,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 6917.419050541717,
+    "pay_amt1": 6073.245922577259
+  },
+  {
+    "customer_id": 268,
+    "customer_name": "Amara Wright",
+    "default_probability": 0.154,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 354217.20115368353,
+    "age": 26,
+    "education": 1,
+    "pay_0": 0,
+    "bill_amt1": 37738.762497477626,
+    "pay_amt1": 6383.715295706078
+  },
+  {
+    "customer_id": 337,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.1539,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 429175.68616539356,
+    "age": 26,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 45950.226657031744,
+    "pay_amt1": 8497.530489343326
+  },
+  {
+    "customer_id": 821,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.1527,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 403398.1898130256,
+    "age": 70,
+    "education": 1,
+    "pay_0": 6,
+    "bill_amt1": 69827.25935305464,
+    "pay_amt1": 6957.452483567053
+  },
+  {
+    "customer_id": 739,
+    "customer_name": "Dmitri Nakamura",
+    "default_probability": 0.152,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 225176.10519940703,
+    "age": 42,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 10612.541856490243,
+    "pay_amt1": 1369.9682861896745
+  },
+  {
+    "customer_id": 494,
+    "customer_name": "Fatima Rodriguez",
+    "default_probability": 0.1481,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 102179.36826464304,
+    "age": 21,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 8438.794789498705,
+    "pay_amt1": 8991.22100660471
+  },
+  {
+    "customer_id": 1,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.1474,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 193524.6582352076,
+    "age": 46,
+    "education": 1,
+    "pay_0": 7,
+    "bill_amt1": 54418.314897680175,
+    "pay_amt1": 5722.677888644485
+  },
+  {
+    "customer_id": 580,
+    "customer_name": "Amara Wright",
+    "default_probability": 0.1437,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 136539.75026648957,
+    "age": 64,
+    "education": 3,
+    "pay_0": 5,
+    "bill_amt1": 18319.824512663487,
+    "pay_amt1": 4652.785720120073
+  },
+  {
+    "customer_id": 636,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.1434,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 229232.05974349278,
+    "age": 71,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 1806.0219759960528,
+    "pay_amt1": 1060.2718995537884
+  },
+  {
+    "customer_id": 720,
+    "customer_name": "Eleanor Kim",
+    "default_probability": 0.1419,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 368125.06284978567,
+    "age": 56,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 58240.09648679398,
+    "pay_amt1": 6163.699311345824
+  },
+  {
+    "customer_id": 608,
+    "customer_name": "Sophia Wong",
+    "default_probability": 0.1416,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 188492.23191355699,
+    "age": 65,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 44794.36402077033,
+    "pay_amt1": 2502.07107178383
+  },
+  {
+    "customer_id": 793,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.1386,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 257885.45265338832,
+    "age": 68,
+    "education": 2,
+    "pay_0": 2,
+    "bill_amt1": 6272.217141445879,
+    "pay_amt1": 279.7189727535898
+  },
+  {
+    "customer_id": 637,
+    "customer_name": "Jackson Takahashi",
+    "default_probability": 0.1386,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 270982.46056296135,
+    "age": 42,
+    "education": 2,
+    "pay_0": 7,
+    "bill_amt1": 48272.83874767834,
+    "pay_amt1": 9382.353222556325
+  },
+  {
+    "customer_id": 284,
+    "customer_name": "Hannah Zhao",
+    "default_probability": 0.138,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 56051.15052202581,
+    "age": 55,
+    "education": 3,
+    "pay_0": 7,
+    "bill_amt1": 8094.970202235608,
+    "pay_amt1": 7745.041063553267
+  },
+  {
+    "customer_id": 328,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.1368,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 309743.1656548326,
+    "age": 34,
+    "education": 1,
+    "pay_0": 7,
+    "bill_amt1": 38122.99527748767,
+    "pay_amt1": 3889.8310160043916
+  },
+  {
+    "customer_id": 896,
+    "customer_name": "Sophia Wong",
+    "default_probability": 0.1346,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 110442.30475375228,
+    "age": 36,
+    "education": 3,
+    "pay_0": 6,
+    "bill_amt1": 60770.98082270046,
+    "pay_amt1": 1723.2790234072504
+  },
+  {
+    "customer_id": 670,
+    "customer_name": "Leila Taylor",
+    "default_probability": 0.1341,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 149696.63265998507,
+    "age": 32,
+    "education": 3,
+    "pay_0": 2,
+    "bill_amt1": 30543.276608787084,
+    "pay_amt1": 600.8515722273145
+  },
+  {
+    "customer_id": 197,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.1332,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 365718.28264641727,
+    "age": 59,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 98632.81735601263,
+    "pay_amt1": 7982.038257439419
+  },
+  {
+    "customer_id": 598,
+    "customer_name": "Leila Taylor",
+    "default_probability": 0.1327,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 94436.73688879862,
+    "age": 64,
+    "education": 2,
+    "pay_0": 3,
+    "bill_amt1": 28249.872662096455,
+    "pay_amt1": 8054.737346798248
+  },
+  {
+    "customer_id": 676,
+    "customer_name": "Amara Wright",
+    "default_probability": 0.1323,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 491365.5222852171,
+    "age": 44,
+    "education": 1,
+    "pay_0": 3,
+    "bill_amt1": 89565.29195831768,
+    "pay_amt1": 1039.955703133356
+  },
+  {
+    "customer_id": 59,
+    "customer_name": "Chen Al-Mansoor",
+    "default_probability": 0.1298,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 32161.371566163652,
+    "age": 60,
+    "education": 1,
+    "pay_0": -2,
+    "bill_amt1": 3662.96975988194,
+    "pay_amt1": 8648.038087401708
+  },
+  {
+    "customer_id": 996,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.1295,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 54875.215930050734,
+    "age": 38,
+    "education": 1,
+    "pay_0": 7,
+    "bill_amt1": 5240.568646119881,
+    "pay_amt1": 5439.7357897647935
+  },
+  {
+    "customer_id": 204,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.1288,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 450291.55237826885,
+    "age": 62,
+    "education": 2,
+    "pay_0": -2,
+    "bill_amt1": 17244.63889738591,
+    "pay_amt1": 6974.728319758003
+  },
+  {
+    "customer_id": 352,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.1268,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 429680.0221822779,
+    "age": 66,
+    "education": 3,
+    "pay_0": 7,
+    "bill_amt1": 39238.21009327213,
+    "pay_amt1": 8915.391897315794
+  },
+  {
+    "customer_id": 684,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.126,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 337635.1777629712,
+    "age": 66,
+    "education": 1,
+    "pay_0": 0,
+    "bill_amt1": 48009.01422400464,
+    "pay_amt1": 6737.638346297746
+  },
+  {
+    "customer_id": 492,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.125,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 313864.972922753,
+    "age": 79,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 93581.56241111459,
+    "pay_amt1": 6851.906070143637
+  },
+  {
+    "customer_id": 29,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.1233,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 300283.1387424008,
+    "age": 73,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 68146.0115425272,
+    "pay_amt1": 6668.362807612931
+  },
+  {
+    "customer_id": 618,
+    "customer_name": "Zoe Soderberg",
+    "default_probability": 0.123,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 145670.04759212982,
+    "age": 66,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 32018.621940405534,
+    "pay_amt1": 4840.458759603792
+  },
+  {
+    "customer_id": 236,
+    "customer_name": "Hannah Zhao",
+    "default_probability": 0.1213,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 364001.5364781376,
+    "age": 71,
+    "education": 3,
+    "pay_0": -2,
+    "bill_amt1": 27946.944122964855,
+    "pay_amt1": 3110.453197513056
+  },
+  {
+    "customer_id": 717,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.1208,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 417003.50981598726,
+    "age": 44,
+    "education": 4,
+    "pay_0": 8,
+    "bill_amt1": 23073.427660611876,
+    "pay_amt1": 7083.908550348354
+  },
+  {
+    "customer_id": 877,
+    "customer_name": "Jackson Takahashi",
+    "default_probability": 0.1188,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 360826.39213522477,
+    "age": 34,
+    "education": 1,
+    "pay_0": -2,
+    "bill_amt1": 76257.11127915529,
+    "pay_amt1": 556.4077268773792
+  },
+  {
+    "customer_id": 855,
+    "customer_name": "Oliver Lin",
+    "default_probability": 0.1184,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 110518.42383618352,
+    "age": 24,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 42866.482438948486,
+    "pay_amt1": 7404.646509447302
+  },
+  {
+    "customer_id": 592,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.1171,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 324028.62495357514,
+    "age": 42,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 20932.181604701706,
+    "pay_amt1": 2443.6722852770677
+  },
+  {
+    "customer_id": 340,
+    "customer_name": "Amara Wright",
+    "default_probability": 0.1169,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 57938.738718990724,
+    "age": 45,
+    "education": 4,
+    "pay_0": 8,
+    "bill_amt1": 62437.269792361025,
+    "pay_amt1": 1222.7285272134948
+  },
+  {
+    "customer_id": 829,
+    "customer_name": "Jackson Takahashi",
+    "default_probability": 0.1156,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 371375.6115737767,
+    "age": 22,
+    "education": 4,
+    "pay_0": 8,
+    "bill_amt1": 76425.56740241413,
+    "pay_amt1": 8928.306262632394
+  },
+  {
+    "customer_id": 45,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.1151,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Early volatility indicators detected in revolving payment ratios and monthly statement activity relative to credit line.",
+    "limit_bal": 136802.1909840083,
+    "age": 32,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 65778.8780036186,
+    "pay_amt1": 9974.149326174253
+  },
+  {
+    "customer_id": 481,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.1148,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 318405.3326862786,
+    "age": 56,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 99974.12722580926,
+    "pay_amt1": 3354.9220596698883
+  },
+  {
+    "customer_id": 972,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.1138,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 469046.57226913143,
+    "age": 72,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 24196.0635674496,
+    "pay_amt1": 1681.9078442825464
+  },
+  {
+    "customer_id": 36,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.1109,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 406114.70057706593,
+    "age": 47,
+    "education": 2,
+    "pay_0": 6,
+    "bill_amt1": 96160.20255748788,
+    "pay_amt1": 1616.095805953639
+  },
+  {
+    "customer_id": 378,
+    "customer_name": "Zoe Soderberg",
+    "default_probability": 0.1102,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 21403.248510554673,
+    "age": 30,
+    "education": 4,
+    "pay_0": 2,
+    "bill_amt1": 13524.119124650137,
+    "pay_amt1": 1602.934738208287
+  },
+  {
+    "customer_id": 574,
+    "customer_name": "Leila Taylor",
+    "default_probability": 0.1094,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 314822.483111658,
+    "age": 40,
+    "education": 4,
+    "pay_0": 2,
+    "bill_amt1": 11279.691886657694,
+    "pay_amt1": 2653.5117167539092
+  },
+  {
+    "customer_id": 257,
+    "customer_name": "Lucas Jenkins",
+    "default_probability": 0.1084,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 468715.83933878265,
+    "age": 46,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 34156.963294427514,
+    "pay_amt1": 2062.918150723635
+  },
+  {
+    "customer_id": 463,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.1075,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 375561.99084005743,
+    "age": 49,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 4832.4408855396905,
+    "pay_amt1": 7809.959810281724
+  },
+  {
+    "customer_id": 484,
+    "customer_name": "Amara Wright",
+    "default_probability": 0.1066,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 317503.4592411911,
+    "age": 56,
+    "education": 4,
+    "pay_0": 6,
+    "bill_amt1": 58645.95123747976,
+    "pay_amt1": 3609.694136485402
+  },
+  {
+    "customer_id": 566,
+    "customer_name": "Fatima Rodriguez",
+    "default_probability": 0.1066,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 299059.66655877023,
+    "age": 64,
+    "education": 3,
+    "pay_0": -1,
+    "bill_amt1": 88785.93497355527,
+    "pay_amt1": 8332.217713715005
+  },
+  {
+    "customer_id": 329,
+    "customer_name": "Lucas Jenkins",
+    "default_probability": 0.104,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 215604.03058961706,
+    "age": 51,
+    "education": 4,
+    "pay_0": 1,
+    "bill_amt1": 99071.2558623105,
+    "pay_amt1": 8897.578149731538
+  },
+  {
+    "customer_id": 295,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.1039,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 72259.65119942353,
+    "age": 42,
+    "education": 3,
+    "pay_0": 8,
+    "bill_amt1": 85791.70722435677,
+    "pay_amt1": 8937.874270099981
+  },
+  {
+    "customer_id": 459,
+    "customer_name": "David Vance",
+    "default_probability": 0.1036,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 37588.6050841003,
+    "age": 27,
+    "education": 1,
+    "pay_0": 0,
+    "bill_amt1": 11313.593767402363,
+    "pay_amt1": 3369.1383659146045
+  },
+  {
+    "customer_id": 613,
+    "customer_name": "Jackson Takahashi",
+    "default_probability": 0.1013,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 317671.1908505448,
+    "age": 34,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 23970.90782424447,
+    "pay_amt1": 413.0814192146481
+  },
+  {
+    "customer_id": 76,
+    "customer_name": "Amara Wright",
+    "default_probability": 0.1012,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 367213.5123400838,
+    "age": 69,
+    "education": 4,
+    "pay_0": 6,
+    "bill_amt1": 85558.88940755634,
+    "pay_amt1": 7283.613027367225
+  },
+  {
+    "customer_id": 149,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.099,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Statement balance exceeds 80% of total credit line with minimal monthly repayment, signaling debt accumulation risk.",
+    "limit_bal": 35224.58811249478,
+    "age": 47,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 37287.650920217784,
+    "pay_amt1": 6737.446300480177
+  },
+  {
+    "customer_id": 108,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.0964,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 380220.05788609385,
+    "age": 36,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 48922.990020461286,
+    "pay_amt1": 3589.3476025304826
+  },
+  {
+    "customer_id": 819,
+    "customer_name": "David Vance",
+    "default_probability": 0.0954,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 36833.20302279535,
+    "age": 75,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 83019.25630695713,
+    "pay_amt1": 2250.916645946802
+  },
+  {
+    "customer_id": 119,
+    "customer_name": "Mateo Novak",
+    "default_probability": 0.0921,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 447353.9092600891,
+    "age": 29,
+    "education": 4,
+    "pay_0": -1,
+    "bill_amt1": 81043.65856156252,
+    "pay_amt1": 6834.161322937092
+  },
+  {
+    "customer_id": 426,
+    "customer_name": "Zoe Soderberg",
+    "default_probability": 0.0896,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 279269.1523386304,
+    "age": 79,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 75899.57624907276,
+    "pay_amt1": 7203.813108663943
+  },
+  {
+    "customer_id": 251,
+    "customer_name": "Chen Al-Mansoor",
+    "default_probability": 0.0893,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 154279.957114097,
+    "age": 66,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 70753.54377454436,
+    "pay_amt1": 7207.5221827763435
+  },
+  {
+    "customer_id": 937,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.0891,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 19011.431508258698,
+    "age": 73,
+    "education": 3,
+    "pay_0": 5,
+    "bill_amt1": 76127.54563504124,
+    "pay_amt1": 4433.067933697404
+  },
+  {
+    "customer_id": 267,
+    "customer_name": "David Vance",
+    "default_probability": 0.0857,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 351537.71308768133,
+    "age": 25,
+    "education": 4,
+    "pay_0": -1,
+    "bill_amt1": 98973.6597712271,
+    "pay_amt1": 9383.78737084061
+  },
+  {
+    "customer_id": 699,
+    "customer_name": "David Vance",
+    "default_probability": 0.0855,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Statement balance exceeds 80% of total credit line with minimal monthly repayment, signaling debt accumulation risk.",
+    "limit_bal": 85637.73048435913,
+    "age": 50,
+    "education": 3,
+    "pay_0": -1,
+    "bill_amt1": 98239.05545175666,
+    "pay_amt1": 1407.9991220969046
+  },
+  {
+    "customer_id": 567,
+    "customer_name": "Oliver Lin",
+    "default_probability": 0.0849,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 202199.58209886885,
+    "age": 60,
+    "education": 4,
+    "pay_0": 8,
+    "bill_amt1": 10226.428099711604,
+    "pay_amt1": 8023.60550982478
+  },
+  {
+    "customer_id": 158,
+    "customer_name": "Fatima Rodriguez",
+    "default_probability": 0.0808,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 383193.6115110716,
+    "age": 60,
+    "education": 1,
+    "pay_0": 3,
+    "bill_amt1": 88278.16996264967,
+    "pay_amt1": 5432.780299181056
+  },
+  {
+    "customer_id": 725,
+    "customer_name": "Carlos Kowalski",
+    "default_probability": 0.0807,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 291491.8254581568,
+    "age": 70,
+    "education": 3,
+    "pay_0": -1,
+    "bill_amt1": 93089.81443714295,
+    "pay_amt1": 5731.3493465407055
+  },
+  {
+    "customer_id": 578,
+    "customer_name": "Sarah Dubois",
+    "default_probability": 0.0801,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 464027.93632913224,
+    "age": 70,
+    "education": 1,
+    "pay_0": 6,
+    "bill_amt1": 77380.07485690339,
+    "pay_amt1": 203.1046783335122
+  },
+  {
+    "customer_id": 420,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.08,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 378663.5194244632,
+    "age": 63,
+    "education": 4,
+    "pay_0": 2,
+    "bill_amt1": 98268.00487224341,
+    "pay_amt1": 3716.230103577677
+  },
+  {
+    "customer_id": 708,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.0785,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 406838.4784687711,
+    "age": 51,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 99098.61694966853,
+    "pay_amt1": 7523.6144239739215
+  },
+  {
+    "customer_id": 522,
+    "customer_name": "Zoe Soderberg",
+    "default_probability": 0.0755,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 196636.51974920055,
+    "age": 68,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 70530.66425359272,
+    "pay_amt1": 2870.031055091986
+  },
+  {
+    "customer_id": 880,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.073,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 118766.35934714523,
+    "age": 42,
+    "education": 3,
+    "pay_0": -1,
+    "bill_amt1": 89215.29168699609,
+    "pay_amt1": 5819.698075118143
+  },
+  {
+    "customer_id": 769,
+    "customer_name": "Marcus Gupta",
+    "default_probability": 0.0727,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 177620.05687079465,
+    "age": 51,
+    "education": 2,
+    "pay_0": 8,
+    "bill_amt1": 35991.403621536345,
+    "pay_amt1": 4406.536075491068
+  },
+  {
+    "customer_id": 870,
+    "customer_name": "Aisha Olsen",
+    "default_probability": 0.0717,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 473596.57644548005,
+    "age": 58,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 73122.11098732463,
+    "pay_amt1": 7206.703232491321
+  },
+  {
+    "customer_id": 160,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.0672,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 366826.0108198112,
+    "age": 26,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 10452.788787569423,
+    "pay_amt1": 7050.172124034887
+  },
+  {
+    "customer_id": 565,
+    "customer_name": "Jackson Takahashi",
+    "default_probability": 0.067,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 181787.9038152325,
+    "age": 75,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 94215.79170299933,
+    "pay_amt1": 5519.012184951724
+  },
+  {
+    "customer_id": 231,
+    "customer_name": "Oliver Lin",
+    "default_probability": 0.067,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Payment Delay History",
+      "Revolving Utilization",
+      "Prior Payment Friction"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 399457.5387354077,
+    "age": 66,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 47951.92371113538,
+    "pay_amt1": 9792.249722566108
+  },
+  {
+    "customer_id": 665,
+    "customer_name": "Lucas Jenkins",
+    "default_probability": 0.0634,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 59873.41158399783,
+    "age": 70,
+    "education": 2,
+    "pay_0": 6,
+    "bill_amt1": 40277.613434833314,
+    "pay_amt1": 5609.272460442614
+  },
+  {
+    "customer_id": 424,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.062,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 252265.9493042649,
+    "age": 23,
+    "education": 4,
+    "pay_0": 2,
+    "bill_amt1": 32455.410973092614,
+    "pay_amt1": 977.0410369059346
+  },
+  {
+    "customer_id": 310,
+    "customer_name": "Leila Taylor",
+    "default_probability": 0.0615,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 142707.80311841637,
+    "age": 47,
+    "education": 2,
+    "pay_0": 7,
+    "bill_amt1": 85243.0417569119,
+    "pay_amt1": 7848.537123557885
+  },
+  {
+    "customer_id": 250,
+    "customer_name": "Elena Chen",
+    "default_probability": 0.0596,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 427974.63317900646,
+    "age": 35,
+    "education": 4,
+    "pay_0": 6,
+    "bill_amt1": 42155.42482180342,
+    "pay_amt1": 2191.615537379652
+  },
+  {
+    "customer_id": 234,
+    "customer_name": "Zoe Soderberg",
+    "default_probability": 0.0563,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 251333.6699712433,
+    "age": 31,
+    "education": 3,
+    "pay_0": -2,
+    "bill_amt1": 32668.902253174838,
+    "pay_amt1": 11.286225269827588
+  },
+  {
+    "customer_id": 334,
+    "customer_name": "Leila Taylor",
+    "default_probability": 0.0557,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 66875.59384838896,
+    "age": 78,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 41521.37566843307,
+    "pay_amt1": 9084.948674532943
+  },
+  {
+    "customer_id": 828,
+    "customer_name": "Maya Abadi",
+    "default_probability": 0.054,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 5 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 180007.06892915157,
+    "age": 74,
+    "education": 4,
+    "pay_0": 5,
+    "bill_amt1": 58620.8166190509,
+    "pay_amt1": 4982.116867122437
+  },
+  {
+    "customer_id": 573,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.0529,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer shows an initial 1-month payment delay accompanied by an increased revolving balance relative to their credit line.",
+    "limit_bal": 204305.96333742238,
+    "age": 70,
+    "education": 1,
+    "pay_0": 1,
+    "bill_amt1": 43904.148882114794,
+    "pay_amt1": 6798.774872230882
+  },
+  {
+    "customer_id": 99,
+    "customer_name": "David Vance",
+    "default_probability": 0.0516,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization"
+    ],
+    "explanation": "Customer has missed payments for 3 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 22455.372104606642,
+    "age": 32,
+    "education": 4,
+    "pay_0": 3,
+    "bill_amt1": 22377.838627097623,
+    "pay_amt1": 5924.4318540907625
+  },
+  {
+    "customer_id": 64,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.0513,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 184809.13007985873,
+    "age": 50,
+    "education": 4,
+    "pay_0": 0,
+    "bill_amt1": 87489.72345979263,
+    "pay_amt1": 2680.0898368522353
+  },
+  {
+    "customer_id": 627,
+    "customer_name": "David Vance",
+    "default_probability": 0.0507,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 236642.01090524247,
+    "age": 61,
+    "education": 4,
+    "pay_0": 0,
+    "bill_amt1": 95439.69020334743,
+    "pay_amt1": 3438.1290363508942
+  },
+  {
+    "customer_id": 644,
+    "customer_name": "Hannah Zhao",
+    "default_probability": 0.0494,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 170473.70256717817,
+    "age": 76,
+    "education": 1,
+    "pay_0": 4,
+    "bill_amt1": 98934.06378396238,
+    "pay_amt1": 1258.9797654172507
+  },
+  {
+    "customer_id": 480,
+    "customer_name": "Eleanor Kim",
+    "default_probability": 0.0494,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 266317.9436433729,
+    "age": 28,
+    "education": 2,
+    "pay_0": 2,
+    "bill_amt1": 87992.95636383737,
+    "pay_amt1": 7415.401369476333
+  },
+  {
+    "customer_id": 832,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.0466,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Secondary repayment friction detected following recent account utilization spikes.",
+    "limit_bal": 231695.36290501978,
+    "age": 74,
+    "education": 2,
+    "pay_0": -1,
+    "bill_amt1": 79363.2414255581,
+    "pay_amt1": 8854.073229335307
+  },
+  {
+    "customer_id": 117,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.0455,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 403799.3176805661,
+    "age": 75,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 99758.25929459724,
+    "pay_amt1": 1561.7733044098725
+  },
+  {
+    "customer_id": 997,
+    "customer_name": "Jackson Takahashi",
+    "default_probability": 0.0454,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 459483.65197649895,
+    "age": 20,
+    "education": 4,
+    "pay_0": 2,
+    "bill_amt1": 90781.58577774043,
+    "pay_amt1": 5150.603457578695
+  },
+  {
+    "customer_id": 736,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.0445,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Recent payment covers less than 10% of total statement balance, indicating liquidity compression.",
+    "limit_bal": 439828.26499842305,
+    "age": 25,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 89812.38347128787,
+    "pay_amt1": 8812.531819445598
+  },
+  {
+    "customer_id": 515,
+    "customer_name": "Chen Al-Mansoor",
+    "default_probability": 0.0442,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Statement balance exceeds 80% of total credit line with minimal monthly repayment, signaling debt accumulation risk.",
+    "limit_bal": 32157.14835203281,
+    "age": 53,
+    "education": 4,
+    "pay_0": -2,
+    "bill_amt1": 91329.97116000338,
+    "pay_amt1": 2014.2290882280256
+  },
+  {
+    "customer_id": 418,
+    "customer_name": "Elena Chen",
+    "default_probability": 0.0406,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 171045.6272312588,
+    "age": 50,
+    "education": 1,
+    "pay_0": 8,
+    "bill_amt1": 48301.185554837866,
+    "pay_amt1": 7606.825135390387
+  },
+  {
+    "customer_id": 487,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.0403,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 32268.726367314357,
+    "age": 61,
+    "education": 4,
+    "pay_0": 7,
+    "bill_amt1": 89789.81047742521,
+    "pay_amt1": 5845.215154381931
+  },
+  {
+    "customer_id": 847,
+    "customer_name": "Liam O'Connor",
+    "default_probability": 0.0396,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Statement balance exceeds 80% of total credit line with minimal monthly repayment, signaling debt accumulation risk.",
+    "limit_bal": 51821.33735853549,
+    "age": 31,
+    "education": 4,
+    "pay_0": 0,
+    "bill_amt1": 71168.2059355086,
+    "pay_amt1": 8411.940558769082
+  },
+  {
+    "customer_id": 131,
+    "customer_name": "Chen Al-Mansoor",
+    "default_probability": 0.0386,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 214531.3915429017,
+    "age": 36,
+    "education": 3,
+    "pay_0": 7,
+    "bill_amt1": 88088.14237747366,
+    "pay_amt1": 2468.4890529825134
+  },
+  {
+    "customer_id": 952,
+    "customer_name": "Priya Morales",
+    "default_probability": 0.0381,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 335867.97052766517,
+    "age": 46,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 87150.72134906347,
+    "pay_amt1": 1844.3350559680305
+  },
+  {
+    "customer_id": 478,
+    "customer_name": "Leila Taylor",
+    "default_probability": 0.0342,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 281388.5993566472,
+    "age": 41,
+    "education": 3,
+    "pay_0": 8,
+    "bill_amt1": 82645.365245498,
+    "pay_amt1": 747.8325595908398
+  },
+  {
+    "customer_id": 297,
+    "customer_name": "Vikram Santos",
+    "default_probability": 0.0298,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 387296.8410183193,
+    "age": 75,
+    "education": 3,
+    "pay_0": 8,
+    "bill_amt1": 92374.31312666486,
+    "pay_amt1": 2402.6467561217714
+  },
+  {
+    "customer_id": 641,
+    "customer_name": "Lucas Jenkins",
+    "default_probability": 0.0293,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 6 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 19834.886911085923,
+    "age": 72,
+    "education": 4,
+    "pay_0": 6,
+    "bill_amt1": 82680.71127810328,
+    "pay_amt1": 4672.958030250793
+  },
+  {
+    "customer_id": 470,
+    "customer_name": "Fatima Rodriguez",
+    "default_probability": 0.0289,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 481979.04432589957,
+    "age": 58,
+    "education": 3,
+    "pay_0": 8,
+    "bill_amt1": 99189.28573196418,
+    "pay_amt1": 9589.673461572462
+  },
+  {
+    "customer_id": 477,
+    "customer_name": "Gabriel Patel",
+    "default_probability": 0.0265,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 46160.31672034544,
+    "age": 48,
+    "education": 3,
+    "pay_0": 4,
+    "bill_amt1": 78472.34151793583,
+    "pay_amt1": 7151.9187065364895
+  },
+  {
+    "customer_id": 735,
+    "customer_name": "Oliver Lin",
+    "default_probability": 0.0246,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 4 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 185826.9372205162,
+    "age": 78,
+    "education": 4,
+    "pay_0": 4,
+    "bill_amt1": 92654.77807509755,
+    "pay_amt1": 462.798794892475
+  },
+  {
+    "customer_id": 692,
+    "customer_name": "Hannah Zhao",
+    "default_probability": 0.0228,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 2 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 218463.8549220442,
+    "age": 73,
+    "education": 2,
+    "pay_0": 2,
+    "bill_amt1": 98669.67960804238,
+    "pay_amt1": 1320.9840172874021
+  },
+  {
+    "customer_id": 129,
+    "customer_name": "Vikram Santos",
+    "default_probability": 0.0184,
+    "risk_tier": "Early Warning: Digital SMS Nudge",
+    "top_risk_features": [
+      "Recent Payment Delay",
+      "High Line Utilization",
+      "Low Monthly Repayment"
+    ],
+    "explanation": "Customer has missed payments for 8 consecutive billing cycles while maintaining high credit utilization, indicating an emerging cash-flow crunch.",
+    "limit_bal": 13406.543960283445,
+    "age": 63,
+    "education": 4,
+    "pay_0": 8,
+    "bill_amt1": 84764.03295092551,
+    "pay_amt1": 8850.758625429482
+  }
+]

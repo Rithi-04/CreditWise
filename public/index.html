@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CreditWise Enterprise | Portfolio Risk Intelligence & Operations Command</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    [x-cloak] { display: none !important; }
+    .tabular-nums { font-variant-numeric: tabular-nums; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="h-full font-sans antialiased text-slate-900 bg-slate-50 flex flex-col" x-data="creditWiseApp()" x-init="init()">
+
+  <!-- LOGIN SCREEN (Gated when unauthenticated) -->
+  <div x-show="!authSession.isAuthenticated" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-xl w-full p-8 space-y-6">
+      
+      <!-- Brand Header -->
+      <div class="text-center space-y-2">
+        <div class="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-slate-900 text-white font-bold text-2xl shadow-sm tracking-tighter mb-1">
+          CW
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900 tracking-tight">CreditWise <span class="text-sky-600">Enterprise</span></h2>
+        <p class="text-xs text-slate-500 font-medium">Institutional Risk Intelligence & Client Self-Serve Gateway</p>
+      </div>
+
+      <!-- Quick Demo Access Options -->
+      <div class="space-y-3">
+        <div class="text-xs font-bold text-slate-500 uppercase tracking-wider text-center">Select Role Persona for Quick Demo Access</div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          
+          <!-- Option 1: Loan Officer -->
+          <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/80 hover:border-sky-500 hover:bg-sky-50/40 transition text-left flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900">Loan Officer</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-100 text-sky-800 border border-sky-200">Executive</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Full risk command center, single assessment, batch scoring & human-in-the-loop approvals.</p>
+              <div class="mt-2 text-[10px] font-mono text-slate-400">officer@creditwise.enterprise</div>
+            </div>
+            
+            <button @click="loginAsOfficer()" class="w-full py-2 px-3 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-xs font-semibold shadow-xs transition flex items-center justify-center space-x-1">
+              <span>Auto-Fill Officer & Sign In</span>
+            </button>
+          </div>
+
+          <!-- Option 2: Customer Persona -->
+          <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/80 hover:border-purple-500 hover:bg-purple-50/40 transition text-left flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900">Zoe Soderberg</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-800 border border-purple-200">Customer #882</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-1">Self-serve hardship portal, repayment restructuring & 6-month payment schedule.</p>
+              <div class="mt-2 text-[10px] font-mono text-slate-400">customer.zoe@creditwise.client</div>
+            </div>
+
+            <button @click="loginAsCustomer()" class="w-full py-2 px-3 rounded-lg bg-purple-700 hover:bg-purple-800 text-white text-xs font-semibold shadow-xs transition flex items-center justify-center space-x-1">
+              <span>Auto-Fill Customer & Sign In</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-slate-100 text-[11px] text-slate-500 text-center">
+        Secured with Role-Based Access Control (RBAC) & Header Authentication.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAIN AUTHENTICATED APP WORKSPACE -->
+  <div x-show="authSession.isAuthenticated" class="flex-1 flex flex-col">
+    
+    <!-- Top Institutional Header Bar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          
+          <!-- Brand & Product Title -->
+          <div class="flex items-center space-x-4">
+            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-slate-900 text-white font-bold text-xl shadow-sm tracking-tighter">
+              CW
+            </div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <h1 class="text-lg font-bold text-slate-900 tracking-tight">CreditWise<span class="text-sky-600 font-semibold ml-1">Enterprise</span></h1>
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200" x-text="authSession.userRole === 'loan_officer' ? 'Officer Mode' : 'Customer Portal'">
+                  Officer Mode
+                </span>
+              </div>
+              <p class="text-xs text-slate-500 font-medium">Autonomous Portfolio Risk Intelligence & Operations Command</p>
+            </div>
+          </div>
+
+          <!-- Officer Center Navigation (Officer Only) -->
+          <template x-if="authSession.userRole === 'loan_officer'">
+            <div class="hidden lg:flex items-center p-1 bg-slate-100 rounded-lg border border-slate-200 text-xs font-medium">
+              <button @click="currentView = 'QUEUE'" :class="currentView === 'QUEUE' ? 'bg-white text-slate-900 shadow-xs font-semibold' : 'text-slate-600 hover:text-slate-900'" class="px-3.5 py-1.5 rounded-md transition">
+                Risk Action Queue
+              </button>
+              <button @click="currentView = 'DASHBOARD'; fetchDashboardMetrics()" :class="currentView === 'DASHBOARD' ? 'bg-white text-slate-900 shadow-xs font-semibold' : 'text-slate-600 hover:text-slate-900'" class="px-3.5 py-1.5 rounded-md transition flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+                Executive Analytics
+              </button>
+            </div>
+          </template>
+
+          <!-- Right Controls & Switch Persona -->
+          <div class="flex items-center space-x-3">
+            
+            <div class="hidden sm:flex items-center space-x-2 text-xs px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50">
+              <span class="w-2 h-2 rounded-full" :class="authSession.userRole === 'loan_officer' ? 'bg-sky-500' : 'bg-purple-500'"></span>
+              <span class="font-bold text-slate-800" x-text="authSession.userName">Officer Name</span>
+            </div>
+
+            <!-- Officer Action Triggers -->
+            <template x-if="authSession.userRole === 'loan_officer'">
+              <div class="flex items-center space-x-2">
+                <button @click="isAssessModalOpen = true" class="inline-flex items-center px-3 py-1.5 border border-slate-300 shadow-xs text-xs font-semibold rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition focus:outline-none">
+                  <svg class="w-3.5 h-3.5 mr-1.5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                  </svg>
+                  Assess Single Customer
+                </button>
+
+                <button @click="isUploadModalOpen = true" class="inline-flex items-center px-3 py-1.5 border border-sky-600 text-xs font-semibold rounded-lg text-white bg-sky-600 hover:bg-sky-700 shadow-xs transition focus:outline-none">
+                  <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                  </svg>
+                  Batch Upload (.CSV)
+                </button>
+              </div>
+            </template>
+
+            <button @click="logout()" class="px-3 py-1.5 border border-slate-300 text-xs font-medium rounded-lg text-slate-600 hover:bg-slate-100 transition">
+              Switch Persona
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+      <!-- ROLE 1: LOAN OFFICER VIEW (Action Queue & Analytics) -->
+      <template x-if="authSession.userRole === 'loan_officer'">
+        <div class="space-y-6">
+          
+          <!-- OFFICER VIEW 1: RISK ACTION QUEUE -->
+          <div x-show="currentView === 'QUEUE'" class="space-y-6">
+
+            <!-- Executive KPI Header Strip -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              
+              <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs transition hover:shadow-md">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Queue Volume</span>
+                  <div class="p-2 bg-sky-50 rounded-lg text-sky-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-baseline justify-between">
+                  <span class="text-2xl font-bold text-slate-900 tabular-nums" x-text="kpis.totalQueue">0</span>
+                  <span class="text-xs font-medium text-slate-500">Accounts Flagged</span>
+                </div>
+                <div class="mt-2 text-xs text-slate-500">Ranked by default risk probability</div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs transition hover:shadow-md">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">High-Risk Exposure</span>
+                  <div class="p-2 bg-rose-50 rounded-lg text-rose-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-baseline justify-between">
+                  <span class="text-2xl font-bold text-rose-700 tabular-nums" x-text="formatCurrency(kpis.highRiskExposure)">$0</span>
+                  <span class="text-xs font-semibold px-2 py-0.5 rounded bg-rose-100 text-rose-800" x-text="kpis.tier1Count + ' High Risk'">0 High Risk</span>
+                </div>
+                <div class="mt-2 text-xs text-slate-500">Sum of credit lines for High Risk accounts</div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs transition hover:shadow-md">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Avg Risk Index</span>
+                  <div class="p-2 bg-amber-50 rounded-lg text-amber-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-baseline justify-between">
+                  <span class="text-2xl font-bold text-slate-900 tabular-nums" x-text="(kpis.avgRiskScore * 100).toFixed(1) + '%'">0.0%</span>
+                  <span class="text-xs font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Weighted PD</span>
+                </div>
+                <div class="mt-2 text-xs text-slate-500">Mean probability of default</div>
+              </div>
+
+              <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs transition hover:shadow-md">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Executed / Pending Actions</span>
+                  <div class="p-2 bg-emerald-50 rounded-lg text-emerald-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-baseline justify-between">
+                  <span class="text-2xl font-bold text-emerald-700 tabular-nums" x-text="executedCount">0</span>
+                  <span class="text-xs font-medium text-slate-500" x-text="kpis.totalQueue > 0 ? (kpis.totalQueue - executedCount) + ' Remaining' : '0 Remaining'">0 Remaining</span>
+                </div>
+                <div class="mt-2 text-xs text-slate-500">Hardship plans, limit reviews & calls</div>
+              </div>
+
+            </div>
+
+            <!-- Filter & Queue Management Bar -->
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-xs flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div class="flex flex-wrap items-center gap-3 flex-1">
+                <div class="relative min-w-[240px]">
+                  <input type="text" x-model="searchQuery" placeholder="Search customer, ID..." class="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:bg-white text-slate-900 placeholder-slate-400">
+                  <svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                  </svg>
+                </div>
+
+                <select x-model="selectedRiskTier" class="px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-700 font-medium">
+                  <option value="ALL">All Risk Tiers</option>
+                  <option value="High Risk: Priority Outbound Call">High Risk: Priority Outbound Call</option>
+                  <option value="Medium Risk: Proactive Limit Review">Medium Risk: Limit Review</option>
+                  <option value="Early Warning: Digital SMS Nudge">Early Warning: Digital Nudge</option>
+                </select>
+
+                <select x-model="selectedStatus" class="px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-700 font-medium">
+                  <option value="ALL">All Action Statuses</option>
+                  <option value="UNREVIEWED">Unreviewed</option>
+                  <option value="EXECUTED">Executed / Approved</option>
+                </select>
+              </div>
+
+              <div class="text-xs text-slate-500 font-medium whitespace-nowrap">
+                Showing <span class="font-bold text-slate-900" x-text="filteredQueue.length">0</span> of <span class="font-bold text-slate-900" x-text="queue.length">0</span> accounts
+              </div>
+            </div>
+
+            <!-- Financial Data Grid -->
+            <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr class="bg-slate-50/80 border-b border-slate-200 text-[11px] font-semibold text-slate-600 uppercase tracking-wider">
+                      <th class="py-3 px-4">Customer & Account</th>
+                      <th class="py-3 px-4 text-right">Credit Limit</th>
+                      <th class="py-3 px-4 text-center">Default Risk Score</th>
+                      <th class="py-3 px-4">Risk Tier & Status</th>
+                      <th class="py-3 px-4">Agent Financial Reasoning</th>
+                      <th class="py-3 px-4 text-center">Action Workflows</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 text-xs">
+                    
+                    <template x-for="item in filteredQueue" :key="item.customer_id">
+                      <tr class="hover:bg-slate-50/80 transition duration-150 group" :class="{'bg-emerald-50/30': isExecuted(item.customer_id)}">
+                        
+                        <td class="py-3.5 px-4 align-top">
+                          <div class="font-bold text-slate-900 group-hover:text-sky-600 transition" x-text="item.customer_name || ('Customer #' + item.customer_id)">Customer Name</div>
+                          <div class="text-[11px] text-slate-400 font-mono mt-0.5" x-text="'ACC-' + item.customer_id">ACC-0000</div>
+                          <div class="text-[11px] text-slate-500 mt-1" x-text="(item.age || 35) + ' yrs • ' + formatEducation(item.education)">30 yrs • University</div>
+                        </td>
+
+                        <td class="py-3.5 px-4 align-top text-right tabular-nums font-mono">
+                          <div class="font-semibold text-slate-900" x-text="formatCurrency(item.limit_bal)">$0</div>
+                          <div class="text-[11px] text-slate-400 mt-0.5">Credit Line</div>
+                        </td>
+
+                        <td class="py-3.5 px-4 align-top text-center tabular-nums">
+                          <div class="font-bold text-sm" :class="getScoreColorClass(item.default_probability)" x-text="(item.default_probability * 100).toFixed(1) + '%'">
+                            0.0%
+                          </div>
+                          <div class="w-20 mx-auto bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden border border-slate-200">
+                            <div class="h-full rounded-full" :class="getScoreBgClass(item.default_probability)" :style="'width: ' + Math.min(item.default_probability * 100, 100) + '%'"></div>
+                          </div>
+                        </td>
+
+                        <td class="py-3.5 px-4 align-top space-y-1.5">
+                          <div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] font-semibold border shadow-2xs" :class="getTierBadgeStyle(item.risk_tier)" x-text="item.risk_tier">
+                              High Risk
+                            </span>
+                          </div>
+                          <div>
+                            <template x-if="isExecuted(item.customer_id)">
+                              <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                <svg class="w-3 h-3 mr-1 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span x-text="getExecutionDetails(item.customer_id).action_title || 'Executed'">Executed</span>
+                              </span>
+                            </template>
+                            <template x-if="!isExecuted(item.customer_id)">
+                              <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600 border border-slate-200">
+                                Pending Review
+                              </span>
+                            </template>
+                          </div>
+                        </td>
+
+                        <td class="py-3.5 px-4 align-top max-w-md">
+                          <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80 text-slate-700 text-xs leading-relaxed">
+                            <p x-text="item.explanation" class="line-clamp-2 hover:line-clamp-none transition-all">Agent reasoning summary...</p>
+                          </div>
+                          <div class="flex flex-wrap gap-1.5 mt-2">
+                            <template x-for="tag in getRiskTags(item)" :key="tag">
+                              <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600 border border-slate-200" x-text="tag">
+                                Driver Tag
+                              </span>
+                            </template>
+                          </div>
+                        </td>
+
+                        <td class="py-3.5 px-4 align-top text-center space-y-2">
+                          <button @click="openReviewModal(item)" class="w-full inline-flex items-center justify-center px-3 py-1.5 border border-sky-600 rounded-lg text-xs font-semibold text-white bg-sky-600 hover:bg-sky-700 shadow-xs focus:ring-2 focus:ring-sky-500 transition">
+                            <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Review & Decide
+                          </button>
+                          <button @click="openNegotiationModal(item)" class="w-full inline-flex items-center justify-center px-3 py-1.5 border border-purple-300 rounded-lg text-xs font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100 transition">
+                            <svg class="w-3.5 h-3.5 mr-1.5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+                            Hardship Portal
+                          </button>
+                        </td>
+
+                      </tr>
+                    </template>
+
+                    <template x-if="filteredQueue.length === 0 && !loading">
+                      <tr>
+                        <td colspan="6" class="py-12 text-center text-slate-400">
+                          <p class="text-sm font-medium text-slate-600">No matching account records found</p>
+                        </td>
+                      </tr>
+                    </template>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- OFFICER VIEW 2: EXECUTIVE RISK INTELLIGENCE DASHBOARD -->
+          <div x-show="currentView === 'DASHBOARD'" class="space-y-6">
+            <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <h2 class="text-xl font-bold text-slate-900 tracking-tight">Executive Risk Intelligence & Portfolio Metrics</h2>
+                <p class="text-xs text-slate-500 mt-1">Comprehensive breakdown of total risk exposure, tier distribution, and demographic concentrations.</p>
+              </div>
+              <button @click="fetchDashboardMetrics()" class="inline-flex items-center px-3.5 py-2 border border-slate-300 shadow-xs text-xs font-semibold rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition">
+                Recalculate Metrics
+              </button>
+            </div>
+
+            <!-- Dashboard 4 KPI Strip -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+                <div class="text-xs font-semibold text-slate-500 uppercase">Total Scored Volume</div>
+                <div class="text-3xl font-bold text-slate-900 tabular-nums mt-2" x-text="dashMetrics.total_volume || 0">0</div>
+              </div>
+              <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+                <div class="text-xs font-semibold text-slate-500 uppercase">Total Portfolio Exposure</div>
+                <div class="text-3xl font-bold text-slate-900 tabular-nums mt-2" x-text="formatCurrency(dashMetrics.total_exposure || 0)">$0</div>
+              </div>
+              <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+                <div class="text-xs font-semibold text-slate-500 uppercase">High-Risk Exposure</div>
+                <div class="text-3xl font-bold text-rose-700 tabular-nums mt-2" x-text="formatCurrency(dashMetrics.high_risk_exposure || 0)">$0</div>
+              </div>
+              <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+                <div class="text-xs font-semibold text-slate-500 uppercase">Mean Default Risk Index</div>
+                <div class="text-3xl font-bold text-slate-900 tabular-nums mt-2" x-text="((dashMetrics.avg_default_probability || 0) * 100).toFixed(1) + '%'">0.0%</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </template>
+
+      <!-- ROLE 2: CUSTOMER SELF-SERVE PORTAL VIEW -->
+      <template x-if="authSession.userRole === 'customer'">
+        <div class="max-w-4xl mx-auto space-y-6">
+          
+          <!-- Customer Profile Card -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+              <div>
+                <h2 class="text-xl font-bold text-slate-900" x-text="'Welcome back, ' + authSession.userName">Welcome, Customer</h2>
+                <p class="text-xs text-slate-500">Account Reference: <span class="font-mono font-bold text-slate-800" x-text="'ACC-' + customerProfile.customer_id">ACC-0000</span></p>
+              </div>
+              <span class="px-3 py-1 rounded-md text-xs font-bold border" :class="getTierBadgeStyle(customerProfile.risk_tier)" x-text="customerProfile.risk_tier">
+                Risk Tier
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500 font-medium">Credit Line</div>
+                <div class="text-xl font-bold text-slate-900 font-mono mt-1" x-text="formatCurrency(customerProfile.limit_bal)">$0</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500 font-medium">Evaluated Default Risk Index</div>
+                <div class="text-xl font-bold tabular-nums mt-1" :class="getScoreColorClass(customerProfile.default_probability)" x-text="(customerProfile.default_probability * 100).toFixed(1) + '%'">0.0%</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500 font-medium">Account Status</div>
+                <div class="text-sm font-bold text-sky-700 mt-1">Eligible for Hardship Relief</div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-sky-50/60 border border-sky-100 text-xs text-slate-700 leading-relaxed">
+              <span class="font-bold text-sky-900 uppercase block mb-1">Financial Advisory Narrative</span>
+              <p x-text="customerProfile.explanation">Narrative loading...</p>
+            </div>
+          </div>
+
+          <!-- Customer Hardship Portal Card -->
+          <div class="bg-white rounded-2xl border border-purple-200 p-6 shadow-xs space-y-5">
+            <div class="flex items-center space-x-3 border-b border-slate-100 pb-4">
+              <div class="p-2.5 rounded-lg bg-purple-100 text-purple-700">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900">Autonomous Hardship Restructuring Portal</h3>
+                <p class="text-xs text-slate-500">Request a customized repayment plan. Our AI agent evaluates requests against bank policy in real-time.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button @click="customerNegotiateForm.requested_plan_type = 'reduced_monthly'" :class="customerNegotiateForm.requested_plan_type === 'reduced_monthly' ? 'border-purple-600 bg-purple-50 ring-2 ring-purple-500/20' : 'border-slate-200 bg-white'" class="p-3.5 rounded-xl border text-left transition">
+                <div class="text-xs font-bold text-slate-900">50% Reduced Monthly Installment</div>
+                <p class="text-[11px] text-slate-500 mt-1">Lower monthly payment for 6 months per Policy C-104.</p>
+              </button>
+
+              <button @click="customerNegotiateForm.requested_plan_type = 'extension_30_days'" :class="customerNegotiateForm.requested_plan_type === 'extension_30_days' ? 'border-purple-600 bg-purple-50 ring-2 ring-purple-500/20' : 'border-slate-200 bg-white'" class="p-3.5 rounded-xl border text-left transition">
+                <div class="text-xs font-bold text-slate-900">30-Day Payment Grace Period</div>
+                <p class="text-[11px] text-slate-500 mt-1">30-day grace hold with suspended late fees per Policy G-201.</p>
+              </button>
+
+              <button @click="customerNegotiateForm.requested_plan_type = 'freeze_interest'" :class="customerNegotiateForm.requested_plan_type === 'freeze_interest' ? 'border-purple-600 bg-purple-50 ring-2 ring-purple-500/20' : 'border-slate-200 bg-white'" class="p-3.5 rounded-xl border text-left transition">
+                <div class="text-xs font-bold text-slate-900">0% Interest Rate Freeze</div>
+                <p class="text-[11px] text-slate-500 mt-1">0% interest freeze for 6 months per Policy I-305.</p>
+              </button>
+
+              <button @click="customerNegotiateForm.requested_plan_type = 'fee_waiver'" :class="customerNegotiateForm.requested_plan_type === 'fee_waiver' ? 'border-purple-600 bg-purple-50 ring-2 ring-purple-500/20' : 'border-slate-200 bg-white'" class="p-3.5 rounded-xl border text-left transition">
+                <div class="text-xs font-bold text-slate-900">Courtesy Late Fee Waiver</div>
+                <p class="text-[11px] text-slate-500 mt-1">Full late fee credit up to $250 cap per Policy F-102.</p>
+              </button>
+            </div>
+
+            <div class="flex justify-end">
+              <button @click="runCustomerSelfServeNegotiation()" :disabled="customerNegotiating" class="px-5 py-2.5 text-xs font-semibold rounded-lg text-white bg-purple-700 hover:bg-purple-800 transition flex items-center space-x-2">
+                <svg x-show="customerNegotiating" class="animate-spin h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                <span>Submit Plan Request to Negotiation Agent</span>
+              </button>
+            </div>
+
+            <!-- Agent Output Panel -->
+            <template x-if="customerPlanResult">
+              <div class="space-y-4 pt-4 border-t border-slate-200 animate-fade-in">
+                <div class="p-4 rounded-xl bg-purple-50 border border-purple-200 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                      STATUS: PENDING_APPROVAL
+                    </span>
+                    <span class="text-[11px] font-mono text-purple-700" x-text="customerPlanResult.audit_timestamp">Time</span>
+                  </div>
+
+                  <div class="p-2.5 rounded-lg bg-white border border-purple-200 text-xs font-semibold text-purple-900 flex items-center gap-2">
+                    <svg class="w-4 h-4 text-purple-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span x-text="customerPlanResult.policy_guardrail_applied">Policy Guardrail Enforced</span>
+                  </div>
+
+                  <p class="text-xs text-slate-700 leading-relaxed bg-white p-3 rounded-lg border border-slate-200" x-text="customerPlanResult.agent_reasoning"></p>
+                </div>
+              </div>
+            </template>
+
+          </div>
+
+        </div>
+      </template>
+
+    </main>
+  </div>
+
+  <!-- MODAL 1: RICH SINGLE CUSTOMER ASSESSMENT DRAWER/MODAL -->
+  <div x-show="isAssessModalOpen" x-cloak class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity" @click="isAssessModalOpen = false"></div>
+
+    <div class="flex items-center justify-center min-h-screen p-4 sm:p-6">
+      <div class="relative bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-2xl sm:w-full border border-slate-200 flex flex-col">
+        
+        <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+          <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+            <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+            <span>Manual Single-Customer Risk Assessment</span>
+          </h3>
+          <button @click="isAssessModalOpen = false" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-200/60 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <form @submit.prevent="runSingleAssessment()" class="p-6 space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700">Customer Full Name</label>
+              <input type="text" x-model="assessForm.customer_name" placeholder="e.g. Eleanor Vance" class="mt-1 w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:bg-white text-slate-900">
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700">Credit Limit ($)</label>
+              <input type="number" x-model.number="assessForm.limit_bal" class="mt-1 w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:bg-white text-slate-900">
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700">Age (Years)</label>
+              <input type="number" x-model.number="assessForm.age" class="mt-1 w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:bg-white text-slate-900">
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700">Education Level</label>
+              <select x-model.number="assessForm.education" class="mt-1 w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 text-slate-700">
+                <option value="1">Graduate School</option>
+                <option value="2">University</option>
+                <option value="3">High School</option>
+                <option value="4">Others</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700">Recent Payment Delay (PAY_0)</label>
+              <select x-model.number="assessForm.pay_0" class="mt-1 w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 text-slate-700 font-semibold">
+                <option value="0">0 = On Time / Paid</option>
+                <option value="1">1 = 1 Month Delay</option>
+                <option value="2">2 = 2 Months Delay</option>
+                <option value="3">3 = 3+ Months Delay</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700">Secondary Payment Status (PAY_2)</label>
+              <select x-model.number="assessForm.pay_2" class="mt-1 w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 text-slate-700">
+                <option value="0">0 = On Time</option>
+                <option value="1">1 = 1 Month Delay</option>
+                <option value="2">2 = 2 Months Delay</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700">Latest Statement Bill ($)</label>
+              <input type="number" x-model.number="assessForm.bill_amt1" class="mt-1 w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:bg-white text-slate-900">
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700">Latest Payment Made ($)</label>
+              <input type="number" x-model.number="assessForm.pay_amt1" class="mt-1 w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:bg-white text-slate-900">
+            </div>
+          </div>
+
+          <!-- Real-Time Assessment Result Preview Box -->
+          <template x-if="assessmentResult">
+            <div class="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2 animate-fade-in">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-700 uppercase">Real-Time Risk Results</span>
+                <span class="text-xs font-bold px-2.5 py-0.5 rounded border" :class="getTierBadgeStyle(assessmentResult.risk_tier)" x-text="assessmentResult.risk_tier">High Risk</span>
+              </div>
+              <div class="text-2xl font-bold tabular-nums" :class="getScoreColorClass(assessmentResult.default_probability)" x-text="'Default Probability: ' + (assessmentResult.default_probability * 100).toFixed(1) + '%'">
+                0.0%
+              </div>
+              <p class="text-xs text-slate-700 leading-relaxed bg-white p-3 rounded-lg border border-slate-200" x-text="assessmentResult.explanation"></p>
+            </div>
+          </template>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-end space-x-3">
+            <button type="button" @click="isAssessModalOpen = false" class="px-4 py-2 border border-slate-300 shadow-xs text-xs font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition">
+              Close
+            </button>
+            <button type="submit" :disabled="assessing" class="px-5 py-2 text-xs font-semibold rounded-lg text-white bg-sky-600 hover:bg-sky-700 shadow-sm transition flex items-center space-x-2">
+              <svg x-show="assessing" class="animate-spin h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+              <span>Run Assessment</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: RICH BULK DRAG-AND-DROP BATCH UPLOAD MODAL -->
+  <div x-show="isUploadModalOpen" x-cloak class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity" @click="isUploadModalOpen = false"></div>
+
+    <div class="flex items-center justify-center min-h-screen p-4 sm:p-6">
+      <div class="relative bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full border border-slate-200 flex flex-col">
+        
+        <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+          <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+            <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+            </svg>
+            <span>Bulk Batch File Upload (.CSV / .XLSX)</span>
+          </h3>
+          <button @click="isUploadModalOpen = false" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-200/60 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <div class="p-6 space-y-4">
+          
+          <!-- Dropzone -->
+          <div @dragover.prevent="dragover = true" @dragleave.prevent="dragover = false" @drop.prevent="handleFileDrop($event)" :class="dragover ? 'border-sky-500 bg-sky-50/50' : 'border-slate-300 bg-slate-50'" class="border-2 border-dashed rounded-xl p-8 text-center transition">
+            <svg class="w-10 h-10 mx-auto text-slate-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+            </svg>
+            <p class="text-xs font-semibold text-slate-700">Drag & Drop your customer spreadsheet here</p>
+            <p class="text-[11px] text-slate-400 mt-1">Supports .csv, .xlsx, or .xls format</p>
+            
+            <input type="file" id="batchFileInput" @change="handleFileSelect($event)" class="hidden" accept=".csv, .xlsx, .xls">
+            <label for="batchFileInput" class="mt-4 inline-block px-4 py-2 border border-slate-300 rounded-lg text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 shadow-2xs cursor-pointer transition">
+              Browse Files
+            </label>
+          </div>
+
+          <template x-if="selectedFile">
+            <div class="p-3 bg-slate-100 rounded-lg border border-slate-200 flex items-center justify-between text-xs">
+              <span class="font-mono text-slate-800 font-semibold" x-text="selectedFile.name">filename.csv</span>
+              <span class="text-slate-500" x-text="(selectedFile.size / 1024).toFixed(1) + ' KB'">0 KB</span>
+            </div>
+          </template>
+
+          <template x-if="uploadSuccessMsg">
+            <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-800 font-medium" x-text="uploadSuccessMsg"></div>
+          </template>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-end space-x-3">
+            <button type="button" @click="isUploadModalOpen = false" class="px-4 py-2 border border-slate-300 shadow-xs text-xs font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition">
+              Cancel
+            </button>
+            <button type="button" @click="uploadBatchFile()" :disabled="uploading || !selectedFile" class="px-5 py-2 text-xs font-semibold rounded-lg text-white bg-sky-600 hover:bg-sky-700 shadow-sm transition flex items-center space-x-2 disabled:opacity-50">
+              <svg x-show="uploading" class="animate-spin h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+              <span>Score & Import Batch</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: RICH SPLIT-PANE REVIEW & DECIDE COMMAND CENTER -->
+  <div x-show="isModalOpen" x-cloak class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div x-show="isModalOpen" x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity" @click="closeReviewModal()"></div>
+
+    <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-6">
+      <div x-show="isModalOpen" x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="relative bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-5xl sm:w-full border border-slate-200 flex flex-col max-h-[90vh]">
+        
+        <!-- Modal Top Bar -->
+        <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="p-2 rounded-lg bg-sky-100 text-sky-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                <span>Account Review & Operations Command</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-200 text-slate-700" x-text="'ACC-' + activeItem?.customer_id">ACC-0000</span>
+              </h3>
+              <p class="text-xs text-slate-500 font-medium">Customer: <span class="font-bold text-slate-800" x-text="activeItem?.customer_name">Name</span></p>
+            </div>
+          </div>
+
+          <button @click="closeReviewModal()" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-200/60 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Modal Main Body: Split Pane Layout -->
+        <div class="flex-1 overflow-y-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-50/50">
+          
+          <!-- LEFT PANE: Customer Financial Profile -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs space-y-3">
+              <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Risk Profile Assessment</h4>
+              
+              <div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200">
+                <div>
+                  <div class="text-xs text-slate-500">Calculated Default Probability</div>
+                  <div class="text-2xl font-bold tabular-nums mt-0.5" :class="getScoreColorClass(activeItem?.default_probability)" x-text="activeItem ? (activeItem.default_probability * 100).toFixed(1) + '%' : '0%'">0.0%</div>
+                </div>
+                <div>
+                  <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold border" :class="getTierBadgeStyle(activeItem?.risk_tier)" x-text="activeItem?.risk_tier">High Risk</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="text-[11px] font-semibold text-slate-500 uppercase">Agent Assessment Narrative</label>
+                <div class="mt-1 p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed font-normal" x-text="activeItem?.explanation">Explanation...</div>
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs space-y-3">
+              <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Financial Indicators</h4>
+              <div class="space-y-2 text-xs divide-y divide-slate-100">
+                <div class="flex justify-between py-1.5"><span class="text-slate-500">Credit Limit</span><span class="font-bold text-slate-900 font-mono" x-text="formatCurrency(activeItem?.limit_bal)">$0</span></div>
+                <div class="flex justify-between py-1.5"><span class="text-slate-500">Age / Education</span><span class="font-semibold text-slate-800" x-text="(activeItem?.age || 35) + ' yrs • ' + formatEducation(activeItem?.education)">-</span></div>
+                <div class="flex justify-between py-1.5"><span class="text-slate-500">Recent Payment Status (PAY_0)</span><span class="font-bold" :class="(activeItem?.pay_0 || 0) > 0 ? 'text-rose-600' : 'text-emerald-600'" x-text="formatPayStatus(activeItem?.pay_0)">-</span></div>
+                <div class="flex justify-between py-1.5"><span class="text-slate-500">Latest Bill Amount</span><span class="font-semibold text-slate-800 font-mono" x-text="formatCurrency(activeItem?.bill_amt1)">$0</span></div>
+                <div class="flex justify-between py-1.5"><span class="text-slate-500">Latest Payment Amount</span><span class="font-semibold text-slate-800 font-mono" x-text="formatCurrency(activeItem?.pay_amt1)">$0</span></div>
+              </div>
+            </div>
+
+            <template x-if="activeItem && isExecuted(activeItem.customer_id)">
+              <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs space-y-1">
+                <div class="font-bold flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Action Executed & Audited</span>
+                </div>
+                <p x-text="'Type: ' + getExecutionDetails(activeItem.customer_id).action_key"></p>
+                <p x-text="'Executed at: ' + getExecutionDetails(activeItem.customer_id).executed_at" class="text-[11px] text-emerald-700 font-mono"></p>
+              </div>
+            </template>
+          </div>
+
+          <!-- RIGHT PANE: Agent Workflows & Action Decision Engine -->
+          <div class="lg:col-span-7 space-y-4">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Select Recommended Action Plan</h4>
+                <span class="text-[11px] font-medium text-slate-400">4 Intelligent Workflows</span>
+              </div>
+
+              <!-- 4 Action Option Cards -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <template x-for="opt in actionOptions" :key="opt.key">
+                  <button @click="selectActionOption(opt)" class="p-3.5 rounded-xl border text-left transition duration-150 focus:outline-none relative flex flex-col justify-between" :class="selectedAction?.key === opt.key ? 'border-sky-600 bg-sky-50/50 ring-2 ring-sky-500/20' : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'">
+                    <div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-900" x-text="opt.title">Action Title</span>
+                        <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200" x-text="opt.key">KEY</span>
+                      </div>
+                      <p class="text-[11px] text-slate-500 mt-1 leading-snug" x-text="opt.subtitle"></p>
+                    </div>
+
+                    <div class="mt-3 flex items-center justify-between text-[11px]">
+                      <span class="text-slate-400">Category: <strong class="text-slate-700" x-text="opt.action_category">Relief</strong></span>
+                      <span class="font-bold text-sky-600 flex items-center" x-show="selectedAction?.key === opt.key">Selected <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>
+                    </div>
+                  </button>
+                </template>
+              </div>
+
+              <!-- Draft Preview Box -->
+              <div class="mt-4 pt-4 border-t border-slate-100 space-y-3">
+                <div class="flex items-center justify-between">
+                  <label class="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    <span>Generated Communication & Action Draft</span>
+                  </label>
+                  <span class="text-[11px] text-slate-400">Editable before execution</span>
+                </div>
+
+                <div class="relative">
+                  <textarea x-model="draftText" rows="6" class="w-full p-3.5 text-xs font-mono bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:bg-white text-slate-800 leading-relaxed" placeholder="Select an action to generate draft..."></textarea>
+                  <div x-show="generatingDraft" class="absolute inset-0 bg-white/80 backdrop-blur-2xs flex items-center justify-center rounded-lg">
+                    <div class="flex items-center space-x-2 text-xs font-semibold text-sky-600">
+                      <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                      <span>Drafting customized outreach...</span>
+                    </div>
+                  </div>
+                </div>
+
+                <template x-if="executionSuccess">
+                  <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-800 font-medium flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                      <span>Action successfully executed and recorded in audit log.</span>
+                    </div>
+                    <span class="font-mono text-[10px] bg-emerald-200/60 px-2 py-0.5 rounded text-emerald-900">AUDIT_LOGGED</span>
+                  </div>
+                </template>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Modal Footer Bar -->
+        <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+          <div class="text-xs text-slate-500">
+            Status: <span class="font-mono font-semibold text-slate-700" x-text="activeItem && isExecuted(activeItem.customer_id) ? 'AUDITED_AND_COMPLETED' : 'PENDING_OFFICER_DECISION'">PENDING_OFFICER_DECISION</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <button @click="closeReviewModal()" class="px-4 py-2 border border-slate-300 text-xs font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition">Cancel</button>
+            <button @click="executeSelectedAction()" :disabled="executing || !selectedAction" class="px-5 py-2 text-xs font-semibold rounded-lg text-white bg-sky-600 hover:bg-sky-700 transition disabled:opacity-50 flex items-center space-x-2">
+              <svg x-show="executing" class="animate-spin h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+              <span x-text="executing ? 'Executing...' : 'Execute Action Workflow'">Execute Action Workflow</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: MULTI-AGENT HARDSHIP PORTAL MODAL -->
+  <div x-show="isNegotiationModalOpen" x-cloak class="fixed inset-0 z-50 overflow-y-auto">
+    <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs" @click="isNegotiationModalOpen = false"></div>
+    <div class="flex items-center justify-center min-h-screen p-4 sm:p-6">
+      <div class="relative bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-4xl sm:w-full border border-slate-200 flex flex-col max-h-[92vh]">
+        
+        <div class="px-6 py-4 bg-purple-900 text-white border-b border-purple-800 flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="p-2 rounded-lg bg-purple-800 text-purple-200">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-base font-bold flex items-center gap-2">
+                <span>Multi-Agent Hardship Negotiation Portal</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-purple-800 text-purple-200" x-text="'ACC-' + activeItem?.customer_id">ACC-0000</span>
+              </h3>
+              <p class="text-xs text-purple-200">Customer: <span class="font-bold text-white" x-text="activeItem?.customer_name">Name</span></p>
+            </div>
+          </div>
+
+          <button @click="isNegotiationModalOpen = false" class="text-purple-300 hover:text-white p-1.5 rounded-lg hover:bg-purple-800 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <div class="p-6 space-y-6 overflow-y-auto bg-slate-50/60">
+          <div class="space-y-3">
+            <label class="text-xs font-bold text-slate-700 uppercase">Select Requested Repayment Plan Type</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button @click="negotiateForm.requested_plan_type = 'reduced_monthly'" :class="negotiateForm.requested_plan_type === 'reduced_monthly' ? 'border-purple-600 bg-purple-50 ring-2 ring-purple-500/20' : 'border-slate-200 bg-white'" class="p-3.5 rounded-xl border text-left transition">
+                <div class="text-xs font-bold text-slate-900">50% Reduced Monthly Installment</div>
+                <p class="text-[11px] text-slate-500 mt-1">Request 50% lower monthly payment for 6 months per Policy C-104.</p>
+              </button>
+              <button @click="negotiateForm.requested_plan_type = 'extension_30_days'" :class="negotiateForm.requested_plan_type === 'extension_30_days' ? 'border-purple-600 bg-purple-50 ring-2 ring-purple-500/20' : 'border-slate-200 bg-white'" class="p-3.5 rounded-xl border text-left transition">
+                <div class="text-xs font-bold text-slate-900">30-Day Payment Grace Period</div>
+                <p class="text-[11px] text-slate-500 mt-1">Defer due date by 30 days with late fee hold per Policy G-201.</p>
+              </button>
+              <button @click="negotiateForm.requested_plan_type = 'freeze_interest'" :class="negotiateForm.requested_plan_type === 'freeze_interest' ? 'border-purple-600 bg-purple-50 ring-2 ring-purple-500/20' : 'border-slate-200 bg-white'" class="p-3.5 rounded-xl border text-left transition">
+                <div class="text-xs font-bold text-slate-900">0% Interest Rate Freeze</div>
+                <p class="text-[11px] text-slate-500 mt-1">Freeze interest rate to 0% for 6 months per Policy I-305.</p>
+              </button>
+              <button @click="negotiateForm.requested_plan_type = 'fee_waiver'" :class="negotiateForm.requested_plan_type === 'fee_waiver' ? 'border-purple-600 bg-purple-50 ring-2 ring-purple-500/20' : 'border-slate-200 bg-white'" class="p-3.5 rounded-xl border text-left transition">
+                <div class="text-xs font-bold text-slate-900">Courtesy Late Fee Waiver</div>
+                <p class="text-[11px] text-slate-500 mt-1">Waive accumulated late payment fee up to $250 cap per Policy F-102.</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <button @click="runOfficerHardshipNegotiation()" :disabled="negotiating" class="px-5 py-2 text-xs font-semibold rounded-lg text-white bg-purple-700 hover:bg-purple-800 transition flex items-center space-x-2">
+              <svg x-show="negotiating" class="animate-spin h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+              <span>Submit Request to Negotiation Agent</span>
+            </button>
+          </div>
+
+          <template x-if="negotiationResult">
+            <div class="space-y-4 pt-4 border-t border-slate-200">
+              <div class="p-4 rounded-xl bg-purple-50 border border-purple-200 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">STATUS: PENDING_APPROVAL</span>
+                  <span class="text-[11px] font-mono text-purple-700" x-text="negotiationResult.audit_timestamp">Time</span>
+                </div>
+                <div class="p-2.5 rounded-lg bg-white border border-purple-200 text-xs font-semibold text-purple-900" x-text="negotiationResult.policy_guardrail_applied">Guardrail</div>
+                <p class="text-xs text-slate-700 leading-relaxed bg-white p-3 rounded-lg border border-slate-200" x-text="negotiationResult.agent_reasoning"></p>
+              </div>
+
+              <!-- Schedule Table -->
+              <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-2xs space-y-2">
+                <h4 class="text-xs font-bold text-slate-700 uppercase">Proposed Monthly Installments</h4>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                      <tr class="bg-slate-50 border-b border-slate-200 text-[10px] text-slate-500 uppercase">
+                        <th class="py-2 px-3">Month</th>
+                        <th class="py-2 px-3">Due Date</th>
+                        <th class="py-2 px-3 text-right">Amount Due</th>
+                        <th class="py-2 px-3 text-center">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 tabular-nums">
+                      <template x-for="item in negotiationResult.payment_schedule" :key="item.month">
+                        <tr>
+                          <td class="py-2 px-3 font-semibold text-slate-800" x-text="'Month ' + item.month">Month 1</td>
+                          <td class="py-2 px-3 text-slate-500 font-mono" x-text="item.due_date">2026-11-15</td>
+                          <td class="py-2 px-3 text-right font-bold text-slate-900 font-mono" x-text="formatCurrency(item.amount_due)">$0</td>
+                          <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700" x-text="item.status">SCHEDULED</span></td>
+                        </tr>
+                      </template>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white border border-slate-200 flex justify-between items-center">
+                <div>
+                  <div class="text-xs font-bold text-slate-900">Officer Governance Action</div>
+                  <div class="text-[11px] text-slate-500">Approve execution or escalate for senior board review.</div>
+                </div>
+                <div class="flex space-x-2">
+                  <button @click="approveHardshipPlan('REJECT')" class="px-3 py-1.5 border border-rose-300 text-xs font-semibold rounded-lg text-rose-700 bg-rose-50">Decline Plan</button>
+                  <button @click="approveHardshipPlan('APPROVE')" class="px-4 py-1.5 bg-emerald-600 text-white text-xs font-bold rounded-lg">Approve & Execute</button>
+                </div>
+              </div>
+            </div>
+          </template>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alpine.js Application Script -->
+  <script>
+    function creditWiseApp() {
+      return {
+        // Auth Session State
+        authSession: {
+          isAuthenticated: false,
+          userRole: null, // 'loan_officer' or 'customer'
+          userName: '',
+          email: ''
+        },
+
+        currentView: 'QUEUE',
+        queue: [],
+        loading: false,
+        searchQuery: '',
+        selectedRiskTier: 'ALL',
+        selectedStatus: 'ALL',
+
+        kpis: { totalQueue: 0, highRiskExposure: 0, tier1Count: 0, avgRiskScore: 0 },
+        dashMetrics: {},
+
+        // Customer View State
+        customerProfile: {
+          customer_id: 882,
+          customer_name: 'Zoe Soderberg',
+          limit_bal: 50000,
+          default_probability: 0.7255,
+          risk_tier: 'High Risk: Priority Outbound Call',
+          explanation: 'Customer has missed payments for 7 consecutive billing cycles while maintaining high credit utilization.'
+        },
+        customerNegotiateForm: { requested_plan_type: 'reduced_monthly' },
+        customerNegotiating: false,
+        customerPlanResult: null,
+
+        // Single Assessment State
+        assessForm: {
+          customer_name: '',
+          limit_bal: 50000,
+          age: 35,
+          education: 2,
+          pay_0: 2,
+          pay_2: 0,
+          bill_amt1: 35000,
+          pay_amt1: 1500
+        },
+        assessing: false,
+        assessmentResult: null,
+
+        // File Upload State
+        selectedFile: null,
+        dragover: false,
+        uploading: false,
+        uploadSuccessMsg: '',
+
+        // Review & Decide State
+        activeItem: null,
+        selectedAction: null,
+        draftText: '',
+        generatingDraft: false,
+        executing: false,
+        executionSuccess: false,
+        executedMap: {},
+
+        // Officer Negotiation State
+        negotiateForm: { requested_plan_type: 'reduced_monthly', counter_offer_note: '' },
+        negotiating: false,
+        negotiationResult: null,
+
+        // Modals
+        isModalOpen: false,
+        isAssessModalOpen: false,
+        isUploadModalOpen: false,
+        isNegotiationModalOpen: false,
+
+        actionOptions: [
+          { key: 'HARDSHIP_PLAN', title: 'Approve & Send Digital Hardship Plan', subtitle: 'Triggers an automated SMS/email with a self-serve 6-month zero-interest payment schedule.', action_category: 'HARDSHIP_RELIEF' },
+          { key: 'OUTBOUND_CALL', title: 'Schedule Priority Outbound Call', subtitle: 'Assigns account to human collections queue with a generated call script for the agent.', action_category: 'DIRECT_OUTREACH' },
+          { key: 'LIMIT_REVIEW', title: 'Execute Automated Limit Review', subtitle: 'Safely freezes or reduces credit line to current balance to prevent further exposure.', action_category: 'CREDIT_LINE_ADJUSTMENT' },
+          { key: 'FEE_WAIVER', title: 'Waive Late Fee & Grant 30-Day Extension', subtitle: 'For customers showing early friction, waives late fee and grants 30-day extension.', action_category: 'COURTESY_FEE_WAIVER' }
+        ],
+
+        init() {
+          const savedRole = localStorage.getItem('cw_user_role');
+          if (savedRole === 'loan_officer') {
+            this.loginAsOfficer();
+          } else if (savedRole === 'customer') {
+            this.loginAsCustomer();
+          }
+        },
+
+        loginAsOfficer() {
+          this.authSession = {
+            isAuthenticated: true,
+            userRole: 'loan_officer',
+            userName: 'Senior Risk Officer',
+            email: 'officer@creditwise.enterprise'
+          };
+          localStorage.setItem('cw_user_role', 'loan_officer');
+          this.currentView = 'QUEUE';
+          this.fetchQueue();
+          this.fetchDashboardMetrics();
+        },
+
+        loginAsCustomer() {
+          this.authSession = {
+            isAuthenticated: true,
+            userRole: 'customer',
+            userName: 'Zoe Soderberg',
+            email: 'customer.zoe@creditwise.client'
+          };
+          localStorage.setItem('cw_user_role', 'customer');
+          this.runCustomerSelfServeNegotiation();
+        },
+
+        logout() {
+          this.authSession = { isAuthenticated: false, userRole: null, userName: '', email: '' };
+          localStorage.removeItem('cw_user_role');
+        },
+
+        async fetchQueue() {
+          this.loading = true;
+          try {
+            const res = await fetch('/api/queue', {
+              headers: { 'X-User-Role': this.authSession.userRole || 'loan_officer' }
+            });
+            if (res.ok) {
+              const data = await res.json();
+              this.queue = Array.isArray(data) ? data : (data.queue || []);
+              this.calculateKPIs();
+            }
+          } catch (err) {
+            console.error("Queue fetch error:", err);
+          } finally {
+            this.loading = false;
+          }
+        },
+
+        async fetchDashboardMetrics() {
+          try {
+            const res = await fetch('/api/dashboard-metrics', {
+              headers: { 'X-User-Role': this.authSession.userRole || 'loan_officer' }
+            });
+            if (res.ok) {
+              this.dashMetrics = await res.json();
+            }
+          } catch (err) {
+            console.error("Metrics error:", err);
+          }
+        },
+
+        calculateKPIs() {
+          if (!this.queue.length) return;
+          const total = this.queue.length;
+          let exposure = 0;
+          let tier1Count = 0;
+          let sumScore = 0;
+
+          this.queue.forEach(item => {
+            const prob = item.default_probability || 0;
+            sumScore += prob;
+            if (item.risk_tier && item.risk_tier.includes('High Risk')) {
+              tier1Count++;
+              exposure += (item.limit_bal || 50000);
+            }
+          });
+
+          this.kpis = {
+            totalQueue: total,
+            highRiskExposure: exposure,
+            tier1Count: tier1Count,
+            avgRiskScore: total > 0 ? (sumScore / total) : 0
+          };
+        },
+
+        get filteredQueue() {
+          return this.queue.filter(item => {
+            const q = this.searchQuery.toLowerCase();
+            const nameMatch = item.customer_name ? item.customer_name.toLowerCase().includes(q) : false;
+            const idMatch = String(item.customer_id).includes(q);
+            const matchesSearch = !q || nameMatch || idMatch;
+
+            const matchesRisk = this.selectedRiskTier === 'ALL' || item.risk_tier === this.selectedRiskTier;
+
+            const isExec = this.isExecuted(item.customer_id);
+            const matchesStatus = this.selectedStatus === 'ALL' || 
+              (this.selectedStatus === 'EXECUTED' && isExec) ||
+              (this.selectedStatus === 'UNREVIEWED' && !isExec);
+
+            return matchesSearch && matchesRisk && matchesStatus;
+          });
+        },
+
+        get executedCount() {
+          return Object.keys(this.executedMap).length;
+        },
+
+        isExecuted(id) {
+          return !!this.executedMap[id];
+        },
+
+        getExecutionDetails(id) {
+          return this.executedMap[id] || {};
+        },
+
+        // Single Customer Assessment Action
+        async runSingleAssessment() {
+          this.assessing = true;
+          this.assessmentResult = null;
+          try {
+            const res = await fetch('/api/assess-customer', {
+              method: 'POST',
+              headers: { 
+                'Content-Type': 'application/json',
+                'X-User-Role': 'loan_officer'
+              },
+              body: JSON.stringify(this.assessForm)
+            });
+
+            if (res.ok) {
+              const data = await res.json();
+              this.assessmentResult = data.assessment;
+              this.queue.unshift(data.assessment);
+              this.calculateKPIs();
+            }
+          } catch (err) {
+            console.error("Assessment error:", err);
+          } finally {
+            this.assessing = false;
+          }
+        },
+
+        // File Drag & Drop Handlers
+        handleFileSelect(evt) {
+          const files = evt.target.files;
+          if (files.length > 0) {
+            this.selectedFile = files[0];
+          }
+        },
+
+        handleFileDrop(evt) {
+          this.dragover = false;
+          const files = evt.dataTransfer.files;
+          if (files.length > 0) {
+            this.selectedFile = files[0];
+          }
+        },
+
+        async uploadBatchFile() {
+          if (!this.selectedFile) return;
+          this.uploading = true;
+          this.uploadSuccessMsg = '';
+          try {
+            const formData = new FormData();
+            formData.append('file', this.selectedFile);
+
+            const res = await fetch('/api/upload-batch', {
+              method: 'POST',
+              headers: { 'X-User-Role': 'loan_officer' },
+              body: formData
+            });
+
+            if (res.ok) {
+              const data = await res.json();
+              this.uploadSuccessMsg = `Successfully processed and scored ${data.processed_count} account records.`;
+              if (data.records && data.records.length > 0) {
+                this.queue = [...data.records, ...this.queue];
+                this.calculateKPIs();
+              }
+              setTimeout(() => {
+                this.isUploadModalOpen = false;
+                this.selectedFile = null;
+                this.uploadSuccessMsg = '';
+              }, 1800);
+            }
+          } catch (err) {
+            console.error("Upload error:", err);
+          } finally {
+            this.uploading = false;
+          }
+        },
+
+        // Review & Decide Split Pane Modal
+        openReviewModal(item) {
+          this.activeItem = item;
+          this.isModalOpen = true;
+          this.executionSuccess = false;
+          this.selectActionOption(this.actionOptions[0]);
+        },
+
+        closeReviewModal() {
+          this.isModalOpen = false;
+          this.activeItem = null;
+          this.selectedAction = null;
+          this.draftText = '';
+          this.executionSuccess = false;
+        },
+
+        async selectActionOption(opt) {
+          this.selectedAction = opt;
+          if (!this.activeItem) return;
+
+          this.generatingDraft = true;
+          try {
+            const res = await fetch('/api/draft-outreach', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                customer_id: this.activeItem.customer_id,
+                action_key: opt.key
+              })
+            });
+
+            if (res.ok) {
+              const data = await res.json();
+              this.draftText = data.generated_message || data.draft || '';
+            } else {
+              this.draftText = `Official Notice for ${this.activeItem.customer_name} (ACC-${this.activeItem.customer_id}):\n\nAction Plan: ${opt.title}`;
+            }
+          } catch (err) {
+            this.draftText = `Notice for ${this.activeItem.customer_name}:\n\nAction Plan: ${opt.title}`;
+          } finally {
+            this.generatingDraft = false;
+          }
+        },
+
+        async executeSelectedAction() {
+          if (!this.activeItem || !this.selectedAction) return;
+          this.executing = true;
+          try {
+            const res = await fetch('/api/execute-action', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                customer_id: this.activeItem.customer_id,
+                action_key: this.selectedAction.key,
+                approved_by: 'Senior Risk Officer'
+              })
+            });
+
+            if (res.ok) {
+              const data = await res.json();
+              this.executedMap[this.activeItem.customer_id] = {
+                action_key: data.action_key,
+                action_title: data.action_title || this.selectedAction.title,
+                executed_at: new Date().toLocaleTimeString()
+              };
+              this.executionSuccess = true;
+              setTimeout(() => {
+                this.closeReviewModal();
+              }, 1200);
+            }
+          } catch (err) {
+            console.error("Action execution error:", err);
+          } finally {
+            this.executing = false;
+          }
+        },
+
+        // Officer Negotiation Actions
+        openNegotiationModal(item) {
+          this.activeItem = item;
+          this.isNegotiationModalOpen = true;
+          this.negotiationResult = null;
+          this.runOfficerHardshipNegotiation();
+        },
+
+        async runOfficerHardshipNegotiation() {
+          if (!this.activeItem) return;
+          this.negotiating = true;
+          try {
+            const res = await fetch('/api/negotiate-hardship', {
+              method: 'POST',
+              headers: { 
+                'Content-Type': 'application/json',
+                'X-User-Role': 'loan_officer'
+              },
+              body: JSON.stringify({
+                customer_id: this.activeItem.customer_id,
+                requested_plan_type: this.negotiateForm.requested_plan_type
+              })
+            });
+
+            if (res.ok) {
+              this.negotiationResult = await res.json();
+            }
+          } catch (err) {
+            console.error("Officer hardship negotiate error:", err);
+          } finally {
+            this.negotiating = false;
+          }
+        },
+
+        async approveHardshipPlan(decision) {
+          if (!this.activeItem) return;
+          try {
+            const res = await fetch('/api/approve-hardship', {
+              method: 'POST',
+              headers: { 
+                'Content-Type': 'application/json',
+                'X-User-Role': 'loan_officer'
+              },
+              body: JSON.stringify({
+                customer_id: this.activeItem.customer_id,
+                decision: decision,
+                approved_by: 'Senior Risk Officer'
+              })
+            });
+
+            if (res.ok) {
+              const data = await res.json();
+              this.executedMap[this.activeItem.customer_id] = {
+                action_key: 'HARDSHIP_NEGOTIATION',
+                action_title: 'Hardship Plan (' + data.status + ')',
+                executed_at: new Date().toLocaleTimeString()
+              };
+              this.isNegotiationModalOpen = false;
+            }
+          } catch (err) {
+            console.error("Approve error:", err);
+          }
+        },
+
+        // Customer Self-Serve Actions
+        async runCustomerSelfServeNegotiation() {
+          this.customerNegotiating = true;
+          try {
+            const res = await fetch('/api/customer/negotiate', {
+              method: 'POST',
+              headers: { 
+                'Content-Type': 'application/json',
+                'X-User-Role': 'customer',
+                'X-User-ID': '882'
+              },
+              body: JSON.stringify({
+                customer_id: 882,
+                requested_plan_type: this.customerNegotiateForm.requested_plan_type
+              })
+            });
+
+            if (res.ok) {
+              this.customerPlanResult = await res.json();
+            }
+          } catch (err) {
+            console.error("Customer negotiate error:", err);
+          } finally {
+            this.customerNegotiating = false;
+          }
+        },
+
+        // Helper formatting functions
+        formatCurrency(val) {
+          if (!val && val !== 0) return '$0';
+          return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+        },
+
+        formatEducation(edu) {
+          const map = { 1: 'Graduate School', 2: 'University', 3: 'High School', 4: 'Others' };
+          return map[edu] || 'University';
+        },
+
+        formatPayStatus(pay) {
+          if (!pay || pay <= 0) return 'On Time / Paid';
+          if (pay === 1) return '1 Month Delayed';
+          if (pay === 2) return '2 Months Delayed';
+          return `${pay} Months Delayed`;
+        },
+
+        getScoreColorClass(score) {
+          if (!score) return 'text-slate-700';
+          if (score >= 0.5) return 'text-rose-600';
+          if (score >= 0.25) return 'text-amber-600';
+          return 'text-emerald-600';
+        },
+
+        getScoreBgClass(score) {
+          if (!score) return 'bg-slate-400';
+          if (score >= 0.5) return 'bg-rose-500';
+          if (score >= 0.25) return 'bg-amber-500';
+          return 'bg-emerald-500';
+        },
+
+        getTierBadgeStyle(tier) {
+          if (!tier) return 'bg-slate-100 text-slate-700 border-slate-200';
+          if (tier.includes('High Risk')) return 'bg-rose-50 text-rose-800 border-rose-200';
+          if (tier.includes('Medium Risk')) return 'bg-amber-50 text-amber-800 border-amber-200';
+          return 'bg-emerald-50 text-emerald-800 border-emerald-200';
+        },
+
+        getRiskTags(item) {
+          if (item.top_risk_features && item.top_risk_features.length > 0) return item.top_risk_features;
+          return ['Recent Payment Delay', 'High Line Utilization'];
+        }
+      }
+    }
+  </script>
+</body>
+</html>
